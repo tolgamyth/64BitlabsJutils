@@ -1,0 +1,14 @@
+  ----
+  CSVLexer.lex Source Code
+  ----
+  Tolga Yilmaz;
+  meta-description=View the source code for CSVLexer.lex from the 64bitlabsutils Java utilities.;
+  ----
+
+CSVLexer.lex Source Code
+
+
+
+
+
+%{code-snippet|file=src/main/jflexcsv/com/Ostermiller/util/CSVLexer.lex}

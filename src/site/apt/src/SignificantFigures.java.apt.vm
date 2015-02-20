@@ -1,0 +1,14 @@
+  ----
+  SignificantFigures.java Source Code
+  ----
+  Tolga Yilmaz;
+  meta-description=View the source code for SignificantFigures.java from the 64bitlabsutils Java utilities.;
+  ----
+
+SignificantFigures.java Source Code
+
+    * {{{../SignificantFigures.html}SignificantFigures Documentation and Examples}}
+
+    * {{{../javadoc/SignificantFigures.html}SignificantFigures Javadoc}}
+
+%{code-snippet|brush=java|file=src/main/java/com/Ostermiller/util/SignificantFigures.java}

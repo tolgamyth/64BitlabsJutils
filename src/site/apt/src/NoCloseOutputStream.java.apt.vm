@@ -1,0 +1,14 @@
+  ----
+  NoCloseOutputStream.java Source Code
+  ----
+  Tolga Yilmaz;
+  meta-description=View the source code for NoCloseOutputStream.java from the 64bitlabsutils Java utilities.;
+  ----
+
+NoCloseOutputStream.java Source Code
+
+    * {{{../NoCloseStream.html}NoCloseStream Documentation and Examples}}
+
+    * {{{../javadoc/NoCloseOutputStream.html}NoCloseOutputStream Javadoc}}
+
+%{code-snippet|brush=java|file=src/main/java/com/Ostermiller/util/NoCloseOutputStream.java}

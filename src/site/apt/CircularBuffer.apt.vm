@@ -1,0 +1,82 @@
+  ----
+  Circular Buffers
+  ----
+  Tolga Yilmaz;
+  meta-description=Implements the circular buffer producer/consumer model for streams or Objects.;
+  ----
+
+Circular Buffers
+
+  The com.Ostermiller.util package contains three flavors of circular buffer.
+  Each type is presented here along with a simple example.
+
+Circular Object Buffer
+
+    * {{{./src/CircularObjectBuffer.java.html}CircularObjectBuffer.java Source Code}}
+
+    * {{{./javadoc/CircularObjectBuffer.html}CircularObjectBuffer Javadoc}}
+
+  Implements the circular buffer producer/consumer model for Objects.
+
+*Example
+
+%{code-snippet|brush=java|file=src/site/snippet/CircularObjects.java.snippet}
+
+  This example only works because "Hello World" is one object.  If you try to
+  write more objects than the size of the buffer, the buffer will block until
+  space is available.  In this single thread example, that will appear to cause
+  a program hang.  You can get around this by making the buffer infinite size
+  or emptying the buffer in another thread.
+
+Circular Character Buffer
+
+    * {{{./src/CircularCharBuffer.java.html}CircularCharBuffer.java Source Code}}
+
+    * {{{./javadoc/CircularCharBuffer.html}CircularCharBuffer Javadoc}}
+
+  Implements the circular buffer producer/consumer model for characters.
+  Filling and emptying the buffer is done with standard Java Readers and
+  Writers.
+
+  Using this class is a simpler alternative to using a PipedReader
+  and a PipedWriter. PipedReaders and PipedWriters don't support the
+  mark operation, don't allow you to control buffer sizes that they use,
+  and have a more complicated API that requires a instantiating two
+  classes and connecting them.
+
+*Example
+
+%{code-snippet|brush=java|file=src/site/snippet/CircularCharacters.java.snippet}
+
+  This example only works because "Hello World" is short.  If you try to write
+  more data than the size of the buffer, the buffer will block until space
+  is available.  In this single thread example, that will appear to cause a
+  program hang.  You can get around this by making the buffer infinite size or
+  emptying the buffer in another thread.
+
+
+Circular Byte Buffer
+
+    * {{{./src/CircularByteBuffer.java.html}CircularByteBuffer.java Source Code}}
+
+    * {{{./javadoc/CircularByteBuffer.html}CircularByteBuffer Javadoc}}
+
+  Implements the circular buffer producer/consumer model for bytes.
+  Filling and emptying the buffer is done with standard Java InputStreams and
+  OutputStreams.
+
+  Using this class is a simpler alternative to using a PipedInputStream
+  and a PipedOutputStream. PipedInputStreams and PipedOutputStreams don't support the
+  mark operation, don't allow you to control buffer sizes that they use,
+  and have a more complicated API that requires a instantiating two
+  classes and connecting them.
+
+*Example
+
+%{code-snippet|brush=java|file=src/site/snippet/CircularBytes.java.snippet}
+
+  This example only works because "Hello World" is short.  If you try to write
+  more data than the size of the buffer, the buffer will block until space is
+  available.  In this single thread example, that will appear to cause a
+  program hang.  You can get around this by making the buffer infinite size or
+  emptying the buffer in another thread.

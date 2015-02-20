@@ -1,0 +1,14 @@
+  ----
+  ConcatReader.java Source Code
+  ----
+  Tolga Yilmaz;
+  meta-description=View the source code for ConcatReader.java from the 64bitlabsutils Java utilities.;
+  ----
+
+ConcatReader.java Source Code
+
+    * {{{../Concat.html}Concat Documentation and Examples}}
+
+    * {{{../javadoc/ConcatReader.html}ConcatReader Javadoc}}
+
+%{code-snippet|brush=java|file=src/main/java/com/Ostermiller/util/ConcatReader.java}

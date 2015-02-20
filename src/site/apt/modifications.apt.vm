@@ -1,0 +1,24 @@
+  ----
+  Modifying, Compiling, and Building
+  ----
+  Tolga Yilmaz;
+  meta-description=Instructions for modifying, compiling and building the 64bitlabsutils libraries.;
+  ----
+
+Modifying, Compiling, and Building the com.Ostermiller.util Java utilities
+
+  The com.Ostermiller.util package is open source you can download the
+  source code, make modifications, and distribute your changes in accordance
+  with the {{{./license.html}license}}.  To get started, choose the "latest
+  source code" from the {{{./download.html}downloads}}.  Extract the package
+  and build it with {{{http://maven.apache.org/}Maven}}.
+
+----------------------------------------
+mvn package
+----------------------------------------
+
+  There are several build dependencies such as {{{http://jflex.de/}JFlex}},
+  however, Maven will take care of them for you and download all needed
+  libraries and software.  Upon a successful build, you should find several
+  .jar, .zip, .gz, and .bz2 files built in the target directory.
+

@@ -1,0 +1,101 @@
+  ----
+  Base64 Java Library
+  ----
+  Tolga Yilmaz;
+  meta-description=Encode and decode base 64 in Java.;
+  ----
+
+Base64 Java Library
+
+    * {{{./src/Base64.java.html}Base64.java Source Code}}
+
+    * {{{./javadoc/Base64.html}Base64 Javadoc}}
+
+  Base64 encoding and decoding of data from Java.  Encode and decode methods
+  for Strings, byte arrays, and streams.
+
+  Base64 is needed in many places other than its original use as an encoding
+  format for transferring attachments in email.  It can be used anytime binary
+  or arbitrary data needs to be represented in common printable characters.
+  For example to connect to a web page that requires a username and password
+  (basic authentication) you need to Base64 encode the username and password.
+
+*Example
+
+  Use base64 to add a basic authentication to an HTTP request
+
+%{code-snippet|brush=java|file=src/site/snippet/Base64BasicAuthentication.java.snippet}
+
+*Base64 is not Encryption
+
+  Be aware that Base64 encoding in <not> encryption.  Base64 scrambles the
+  output and it may appear to be unreadable, but it is easily deciphered by
+  anybody with a little experience or time.  Base64 encoded strings will often end
+  in one or two equal signs, and they will have only letters, numbers, pluses, and slashes.
+  Once somebody figures out that it is in Base64, it is just a matter of running
+  the decode method on it.  Furthermore, real encryption algorithms will change
+  the entire output if one bit in the input changes.  If you change a letter in a
+  your message and then re-encode it with Base64, only a few characters will
+  change.  Base64 is not a substitute for encryption.  Base64 used this way is
+  obfuscation, and rather poor obfuscation at that.  It may be a disservice to your
+  users to use Base64 as obfuscation because it gives them the impression that
+  their data is encrypted when it really isn't.
+
+*Command Line Program
+
+  To run Base64 as a stand alone program use the following command line:
+
+----------------------------------------
+java -classpath utils.jar Base64 <files>
+----------------------------------------
+
+----------------------------------------
+Base64 [-eldagxfqQvV] <files>
+Encode or decode using the base64 format.
+  If no files are specified standard input and output will be used.
+  --help            Print this help message.
+  --version         Print out the version number.
+  --about           Print out license and contact info.
+  -g --guess        Guess from contents whether to decode or encode. (default)
+  -e --encode       Apply base64 encoding.
+  -l --lines        Insert line breaks when encoding. (default)
+  --nolines         Insert no line breaks when encoding.
+  -d --decode       Remove base64 encoding.
+  -a --decodeall    When decoding, attempt badly formatted files.
+  --decodegood      Don't decode badly formatted files.  (default)
+  -x --ext <ext>    File extension to use. (default: base64)
+  -f --force        Overwrite files without prompting
+  --noforce         Don't overwrite files.  (default)
+  -v --verbose      Print a message for each file encoded or decoded. (default)
+  -q --quiet        Print error messages.
+  -Q --reallyquiet  Print nothing.
+----------------------------------------
+
+
+*Internationalization
+
+  included languages:
+
+    * English
+
+  Translations gladly accepted.  Please translate
+  {{{./src/Base64.properties.html}Base64.properties}}.
+	You may want to use: {{{http://attesoro.org/}Attesoro -
+  A Java Translation Editor}}
+
+
+*Links
+
+*-----*-----*-----*
+Author | License| Features
+*-----*-----*-----*
+Tolga Yilmaz {{{http://64bitlabs.com/utils/Base64.html}com.Ostermiller.util.Base64}} | Open source, GPL | Encodes and decodes strings, byte arrays, files, and streams from static methods.
+*-----*-----*-----*
+Robert W. Harder {{{http://iharder.sourceforge.net/current/java/base64/}Base64}} | Open source, public domain | Encodes and decodes strings, byte arrays, and objects from static methods.  It will encode and decode streams if you instantiate a Base64.InputStream or a Base64.OutputStream.
+*-----*-----*-----*
+Roedy Green {{{http://mindprod.com/jgloss/base64.html}Java Glossary}}, {{{http://mindprod.com/products1.html#BASE64}com.mindprod.base64.base64}} | Open source, freeware (except military) | Encodes from byte arrays to strings, decodes from strings to byte arrays.
+*-----*-----*-----*
+Tom Daley {{{http://www.javaworld.com/javaworld/javatips/jw-javatip36-p2.html}JavaWorld Tip}} | unknown | Annotated code and nifty graphic that shows how Base64 encoding works. Supports byte array to byte array operations.
+*-----*-----*-----*
+Sinotar {{{http://www.sinotar.com/download/base64/README.html}com.sinotar.algorithm.Base64}} | Open source, free only for personal use. | Encodes from byte arrays to strings, decodes from strings to byte arrays.
+*-----*-----*-----*
