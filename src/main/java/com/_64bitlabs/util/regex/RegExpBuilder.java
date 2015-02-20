@@ -23,13 +23,12 @@ public class RegExpBuilder {
 	private Boolean _reluctant;
 	private Boolean _capture;
 
-    public static final String EMAIL_PATTERN    = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@ " +
-                                                  "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-    public static final String DOMAIN_PATTERN   = "";
-    public static final String PHONE_PATTERN    = "";
-    public static final String ALPHA_ONLY       = "";
-    public static final String NUMERIC_ONLY     = "";
-    public static final String ALPHANUMERIC     = "";
+    public static final String EMAIL_PATTERN        = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[\\p{L}0-9-]+(\\.[\\p{L}0-9]+)*(\\.[\\p{L}]{2,})$";
+    public static final String DOMAINNAME_PATTERN   = "^((?!-)[\\p{L}0-9-]{1,63}(?<!-)\\.)+([\\p{L}]{2,})+(\\.[\\p{L}]{2,})*$";
+    public static final String PHONE_PATTERN        = "";
+    public static final String ALPHA_ONLY           = "";
+    public static final String NUMERIC_ONLY         = "";
+    public static final String ALPHANUMERIC         = "";
 
   
 	public RegExpBuilder() {
