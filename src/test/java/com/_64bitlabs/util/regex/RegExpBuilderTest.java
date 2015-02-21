@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 public class RegExpBuilderTest extends TestCase {
 
     public void testEmailRegex(){
-        Pattern p = Pattern.compile(RegExpBuilder.EMAIL_PATTERN);
+        Pattern p = Pattern.compile(CommonRegex.EMAIL_PATTERN.toString());
         for(String email : ValidEmailProvider()){
             Matcher m = p.matcher(email);
             assertEquals(true,m.find());
@@ -41,7 +41,7 @@ public class RegExpBuilderTest extends TestCase {
     }
 
     public void testDomainRegex(){
-        Pattern p = Pattern.compile(RegExpBuilder.DOMAINNAME_PATTERN);
+        Pattern p = Pattern.compile(CommonRegex.DOMAIN_NAME_PATTERN.toString());
         for(String domain : ValidDomainNameProvider()){
             Matcher m = p.matcher(domain);
             assertEquals(true, m.find());
@@ -66,6 +66,43 @@ public class RegExpBuilderTest extends TestCase {
         return new String[] { "invalid", "--invalid.com.my","invalid.c",
                 "-invalid.net", "invalid-.com", "--cvsdsds.com", "invalidchar!s.com","?invalid.net",
                 "1234567890-1234567890-1234567890-1234567890-1234567890-1234567890-1234567890.com"
+        };
+    }
+
+    public void testPhoneRegex(){
+        Pattern p = Pattern.compile(CommonRegex.PHONE_PATTERN.toString());
+        for(String phone : ValidPhoneProvider()){
+            Matcher m = p.matcher(phone);
+            System.out.println("Valid " + phone + " " +m.find());
+            //assertEquals(true,m.find());
+        }
+        for(String phone : InvalidPhoneProvider()){
+            Matcher m = p.matcher(phone);
+            System.out.println("Inalid " + phone + " " +m.find());
+            //assertEquals(false,m.find());
+        }
+    }
+
+    private String[] InvalidPhoneProvider() {
+        return new String[] {
+                "3-44-12121-32",
+                "031223312(22)",
+                "0312--333-22-33",
+                "------",
+                "3---211",
+                "2-3-4-4-2-1",
+                "321--33--1--22--3"
+        };
+    }
+
+    private String[] ValidPhoneProvider() {
+        return new String[] {
+                "+90(322)9998877",
+                "+90(322)999-88-77",
+                "0(322)999-88-77",
+                "03229998877",
+                "(0312)9991188",
+                "(0312)999-1188"
         };
     }
 
