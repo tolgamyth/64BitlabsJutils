@@ -13,7 +13,7 @@ public class CronTest extends TestCase{
     public void testCron(){
         String s = "";
         try {
-            s = CronUtil.generateCronExpression(new Date());
+            s = QuartzExpGenerator.generateCronExpressionForDate(new Date());
             System.out.println(s);
         } catch (ParseException e) {
             e.toString();
