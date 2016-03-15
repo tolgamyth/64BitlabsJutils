@@ -37,14 +37,14 @@ import java.io.*;
  * <code>BufferedReader in = new BufferedReader(new StraightStreamReader(System.in));</code>
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class StraightStreamReader extends Reader{
 
 	/**
 	 * The input stream from which all methods in this class read.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private InputStream in;
 
@@ -55,7 +55,7 @@ public class StraightStreamReader extends Reader{
 	 * null and may not be large enough.  Make sure to check i
 	 * before using it.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private byte[] buffer;
 
@@ -64,7 +64,7 @@ public class StraightStreamReader extends Reader{
 	 *
 	 * @param in InputStream to wrap a Reader around.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public StraightStreamReader(InputStream in) {
 		this.in = in;
@@ -75,7 +75,7 @@ public class StraightStreamReader extends Reader{
 	 *
 	 * @throws IOException If an I/O error occurs
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public void close() throws IOException {
 		in.close();
@@ -91,7 +91,7 @@ public class StraightStreamReader extends Reader{
 	 *    attempting to reset the stream may fail.
 	 * @throws IOException If the stream does not support mark(), or if some other I/O error occurs
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public void mark(int readAheadLimit) throws IOException {
 		in.mark(readAheadLimit);
@@ -102,7 +102,7 @@ public class StraightStreamReader extends Reader{
 	 *
 	 * @return true if and only if this stream supports the mark operation.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public boolean markSupported(){
 		return in.markSupported();
@@ -116,7 +116,7 @@ public class StraightStreamReader extends Reader{
 	 *    the end of the stream has been reached
 	 * @throws IOException If an I/O error occurs
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public int read() throws IOException {
 		return in.read();
@@ -130,7 +130,7 @@ public class StraightStreamReader extends Reader{
 	 * @return The number of bytes read, or -1 if the end of the stream has been reached
 	 * @throws IOException If an I/O error occurs
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public int read(char[] cbuf) throws IOException {
 		return read(cbuf, 0, cbuf.length);
@@ -146,7 +146,7 @@ public class StraightStreamReader extends Reader{
 	 * @return The number of bytes read, or -1 if the end of the stream has been reached
 	 * @throws IOException If an I/O error occurs
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public int read(char[] cbuf, int off, int len) throws IOException {
 		// ensure the capacity of the buffer that we will be using
@@ -169,7 +169,7 @@ public class StraightStreamReader extends Reader{
 	 *    Note that returning false does not guarantee that the next read will block.
 	 * @throws IOException If an I/O error occurs
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public boolean ready() throws IOException {
 		return (in.available() > 0);
@@ -185,7 +185,7 @@ public class StraightStreamReader extends Reader{
 	 * @throws IOException If the stream has not been marked, or if the mark has been invalidated,
 	 *    or if the stream does not support reset(), or if some other I/O error occurs
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public void reset() throws IOException {
 		in.reset();
@@ -200,7 +200,7 @@ public class StraightStreamReader extends Reader{
 	 * @throws IllegalArgumentException If n is negative
 	 * @throws IOException If an I/O error occurs
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public long skip(long n) throws IOException {
 		return in.skip(n);

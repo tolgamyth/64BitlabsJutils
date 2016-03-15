@@ -32,7 +32,7 @@ import java.io.*;
  *
  * @author Tolga Yilmaz info@64bitlabs.com
  * @author Pierre Dittgen <pierre dot dittgen at pass-tech dot fr>
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class ExcelCSVPrinter implements CSVPrint {
 
@@ -94,14 +94,14 @@ public class ExcelCSVPrinter implements CSVPrint {
 	/**
 	 * The place that the values get written.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected Writer out;
 
 	/**
 	 * True iff we just began a new line.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected boolean newLine = true;
 
@@ -133,7 +133,7 @@ public class ExcelCSVPrinter implements CSVPrint {
 	 *
 	 * @param out stream to which to print.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public ExcelCSVPrinter(OutputStream out){
 		this (
@@ -150,7 +150,7 @@ public class ExcelCSVPrinter implements CSVPrint {
 	 *
 	 * @param out stream to which to print.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public ExcelCSVPrinter(Writer out){
 		this(
@@ -355,7 +355,7 @@ public class ExcelCSVPrinter implements CSVPrint {
 	 *
 	 * @param value value to be outputted.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void println(String value){
 		try {
@@ -391,7 +391,7 @@ public class ExcelCSVPrinter implements CSVPrint {
 	 * any errors have occurred by invoking checkError().  If an I/O Exception is
 	 * desired, the client should use the corresponding writeln method.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void println(){
 		try {
@@ -430,7 +430,7 @@ public class ExcelCSVPrinter implements CSVPrint {
 	 *
 	 * @param values values to be outputted.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void println(String[] values){
 		try {
@@ -471,7 +471,7 @@ public class ExcelCSVPrinter implements CSVPrint {
 	 *
 	 * @param values values to be outputted.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void print(String[] values){
 		try {
@@ -513,7 +513,7 @@ public class ExcelCSVPrinter implements CSVPrint {
 	 *
 	 * @param values values to be outputted.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void println(String[][] values){
 		try {
@@ -558,7 +558,7 @@ public class ExcelCSVPrinter implements CSVPrint {
 	 *
 	 * @param comment the comment to output (ignored).
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void printlnComment(String comment){
 		println();
@@ -588,7 +588,7 @@ public class ExcelCSVPrinter implements CSVPrint {
 	 *
 	 * @param value value to be outputted.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void print(String value){
 		try {
@@ -651,7 +651,7 @@ public class ExcelCSVPrinter implements CSVPrint {
 	 * @param value needs to be escaped and quoted.
 	 *
 	 * @return the value, escaped and quoted.
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private String escapeAndQuote(String value){
 		String s = StringHelper.replace(value, String.valueOf(quoteChar), String.valueOf(quoteChar) + String.valueOf(quoteChar));

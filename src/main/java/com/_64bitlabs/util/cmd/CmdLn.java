@@ -19,6 +19,9 @@ package com._64bitlabs.util.cmd;
 import com._64bitlabs.util.exception.ExtraCmdLnArgumentException;
 import com._64bitlabs.util.exception.MissingCmdLnArgumentException;
 import com._64bitlabs.util.exception.UnknownCmdLnOptionException;
+import gnu.trove.map.hash.THashMap;
+import gnu.trove.set.hash.THashSet;
+import gnu.trove.set.hash.TLinkedHashSet;
 
 import java.io.*;
 import java.util.*;
@@ -56,28 +59,28 @@ public final class CmdLn {
 	 *
 	 * @since 64bitlabsutils 1.07.00
 	 */
-	private ArrayList<CmdLnOption> options = new ArrayList<CmdLnOption>();
+	private ArrayList<CmdLnOption> options = new ArrayList<>();
 
 	/**
 	 * Map the options to their found results.
 	 *
 	 * @since 64bitlabsutils 1.07.00
 	 */
-	private HashMap<CmdLnOption, ArrayList<CmdLnResult>> optionsToResults = new HashMap<CmdLnOption, ArrayList<CmdLnResult>>();
+	private THashMap<CmdLnOption, ArrayList<CmdLnResult>> optionsToResults = new THashMap<>();
 
 	/**
 	 * List of all results that have been found.
 	 *
 	 * @since 64bitlabsutils 1.07.00
 	 */
-	private ArrayList<CmdLnResult> results = new ArrayList<CmdLnResult>();
+	private ArrayList<CmdLnResult> results = new ArrayList<>();
 
 	/**
 	 * A list of the arguments that do not belong to any option.
 	 *
 	 * @since 64bitlabsutils 1.07.00
 	 */
-	private ArrayList<String> leftOverArguments = new ArrayList<String>();
+	private ArrayList<String> leftOverArguments = new ArrayList<>();
 
 	/**
 	 * Mapping of long options to their command line option object.
@@ -85,7 +88,7 @@ public final class CmdLn {
 	 *
 	 * @since 64bitlabsutils 1.07.00
 	 */
-	private HashMap<String,CmdLnOption> longOptions;
+	private THashMap<String,CmdLnOption> longOptions;
 
 	/**
 	 * Mapping of short options to their command line option object.
@@ -93,7 +96,7 @@ public final class CmdLn {
 	 *
 	 * @since 64bitlabsutils 1.07.00
 	 */
-	private HashMap<Character,CmdLnOption> shortOptions;
+	private THashMap<Character,CmdLnOption> shortOptions;
 
 	/**
 	 * An ordered set of what long options start with. Typically contains
@@ -101,7 +104,7 @@ public final class CmdLn {
 	 *
 	 * @since 64bitlabsutils 1.07.00
 	 */
-	private LinkedHashSet<String> longOptionsStart = new LinkedHashSet<String>(1);
+	private TLinkedHashSet<String> longOptionsStart = new TLinkedHashSet<>(1);
 
 	/**
 	 * An ordered set of what short options start with. Typically contains
@@ -109,7 +112,7 @@ public final class CmdLn {
 	 *
 	 * @since 64bitlabsutils 1.07.00
 	 */
-	private LinkedHashSet<String> shortOptionsStart = new LinkedHashSet<String>(1);
+	private TLinkedHashSet<String> shortOptionsStart = new TLinkedHashSet<>(1);
 
 	/**
 	 * A set of strings that indicate that everything following should be regarded
@@ -117,14 +120,14 @@ public final class CmdLn {
 	 *
 	 * @since 64bitlabsutils 1.07.00
 	 */
-	private HashSet<String> nonOptionSeparators = new HashSet<String>(1);
+	private THashSet<String> nonOptionSeparators = new THashSet<>(1);
 
 	/**
 	 * A set of strings that break an option up into an option and an argument.
 	 *
 	 * @since 64bitlabsutils 1.07.00
 	 */
-	private HashSet<Character> optionArgumentDelimiters = new HashSet<Character>(3);
+	private THashSet<Character> optionArgumentDelimiters = new THashSet<>(3);
 
 	/**
 	 * Whether or not the parse method has been called yet.
@@ -720,8 +723,8 @@ public final class CmdLn {
 	 * @since 64bitlabsutils 1.07.00
 	 */
 	private void processOptions(){
-		longOptions = new HashMap<String,CmdLnOption>();
-		shortOptions= new HashMap<Character,CmdLnOption>();
+		longOptions = new THashMap<>();
+		shortOptions= new THashMap<>();
 		for (CmdLnOption option: options){
 			option.setImmutable();
 			for (String name: option.getLongNames()){

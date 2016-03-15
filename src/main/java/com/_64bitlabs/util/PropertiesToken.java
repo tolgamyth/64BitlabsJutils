@@ -26,7 +26,7 @@ import com._64bitlabs.util.string.StringHelper;
  * similarly, the number of characters into the input at which it ended. <br>
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 class PropertiesToken {
 
@@ -61,7 +61,7 @@ class PropertiesToken {
 	 * @param ID the id number of the token
 	 * @param contents A string representing the text of the token
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public PropertiesToken(int ID, String contents){
 		this.ID = ID;
@@ -73,7 +73,7 @@ class PropertiesToken {
 	 *
 	 * @return the id number of the token
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int getID(){
 		return ID;
@@ -84,7 +84,7 @@ class PropertiesToken {
 	 *
 	 * @return A string representing the text of the token
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String getContents(){
 		return (contents);
@@ -95,7 +95,7 @@ class PropertiesToken {
 	 *
 	 * @return String representation
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public String toString(){
 			String idString = "";

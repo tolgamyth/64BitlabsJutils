@@ -25,7 +25,7 @@ import java.io.IOException;
  * with a text operation would likely corrupt the data.
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class BinaryDataException extends IOException {
 
@@ -37,7 +37,7 @@ public class BinaryDataException extends IOException {
 	/**
 	 * Constructs an IOException with null  as its error detail message.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public BinaryDataException(){
 		super();
@@ -50,7 +50,7 @@ public class BinaryDataException extends IOException {
 	 *
 	 * @param s the detail message.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public BinaryDataException(String s){
 		super(s);

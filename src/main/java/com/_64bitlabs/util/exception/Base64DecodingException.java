@@ -27,7 +27,7 @@ import java.io.*;
  * message.
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class Base64DecodingException extends IOException {
 	/**
@@ -42,7 +42,7 @@ public class Base64DecodingException extends IOException {
 	 * @param message message later to be returned by a getMessage() call.
 	 * @param c character that caused this error.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public Base64DecodingException(String message, char c){
 		super(message);
@@ -54,7 +54,7 @@ public class Base64DecodingException extends IOException {
 	 *
 	 * @return the character that caused this error.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public char getChar(){
 		return c;

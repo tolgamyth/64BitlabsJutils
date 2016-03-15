@@ -67,7 +67,7 @@ import java.util.*;
  * @see ExcelCSVParser
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class CSVParser implements CSVParse {
 
@@ -90,7 +90,7 @@ public class CSVParser implements CSVParse {
 	 * Calls for new tokens are routed through
 	 * this object.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private CSVLexer lexer;
 
@@ -99,7 +99,7 @@ public class CSVParser implements CSVParse {
 	 * from the lexer but can't return it because its
 	 * on the next line.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private String tokenCache;
 
@@ -108,7 +108,7 @@ public class CSVParser implements CSVParse {
 	 * the tokenCache.	Not valid if the tokenCache is
 	 * null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private int lineCache;
 
@@ -116,7 +116,7 @@ public class CSVParser implements CSVParse {
 	 * The line number the last token came from, or -1 if
 	 * no tokens have been returned.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private int lastLine = -1;
 
@@ -129,7 +129,7 @@ public class CSVParser implements CSVParse {
 	 *
 	 * @param in stream that contains comma separated values.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public CSVParser(InputStream in){
 		inStream = in;
@@ -162,7 +162,7 @@ public class CSVParser implements CSVParse {
 	 *
 	 * @param in reader that contains comma separated values.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public CSVParser(Reader in){
 		inReader = in;
@@ -223,7 +223,7 @@ public class CSVParser implements CSVParse {
 	 * @param replacements the list of replacement characters for those escape sequences.
 	 * @param commentDelims list of characters a comment line may start with.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public CSVParser(InputStream in, String escapes, String replacements, String commentDelims){
 		inStream = in;
@@ -263,7 +263,7 @@ public class CSVParser implements CSVParse {
 	 * @param replacements the list of replacement characters for those escape sequences.
 	 * @param commentDelims list of characters a comment line may start with.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public CSVParser(Reader in, String escapes, String replacements, String commentDelims){
 		inReader = in;
@@ -289,7 +289,7 @@ public class CSVParser implements CSVParse {
 	 * @return the next value or null if there are no more values.
 	 * @throws IOException if an error occurs while reading.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String nextValue() throws IOException {
 		if (tokenCache == null){
@@ -310,7 +310,7 @@ public class CSVParser implements CSVParse {
 	 *
 	 * @return line number or -1 if no tokens have been returned yet.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int lastLineNumber(){
 		return lastLine;
@@ -325,7 +325,7 @@ public class CSVParser implements CSVParse {
 	 * @return all the values from the line or null if there are no more values.
 	 * @throws IOException if an error occurs while reading.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String[] getLine() throws IOException{
 		int lineNumber = -1;
@@ -362,7 +362,7 @@ public class CSVParser implements CSVParse {
 	 * @return all the values from the file or null if there are no more values.
 	 * @throws IOException if an error occurs while reading.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String[][] getAllValues() throws IOException {
 		ArrayList<String[]> v = new ArrayList<String[]>();
@@ -394,7 +394,7 @@ public class CSVParser implements CSVParse {
 	 * @param escapes a list of characters that will represent escape sequences.
 	 * @param replacements the list of replacement characters for those escape sequences.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setEscapes(String escapes, String replacements){
 		lexer.setEscapes(escapes, replacements);
@@ -442,7 +442,7 @@ public class CSVParser implements CSVParse {
 	 *
 	 * @param commentDelims list of characters a comment line may start with.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setCommentStart(String commentDelims){
 		lexer.setCommentStart(commentDelims);
@@ -453,7 +453,7 @@ public class CSVParser implements CSVParse {
 	 *
 	 * @return line number or -1 if no tokens have been returned.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int getLastLineNumber(){
 		return lastLine;

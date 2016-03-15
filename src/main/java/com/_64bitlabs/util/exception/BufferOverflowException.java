@@ -23,7 +23,7 @@ import java.io.IOException;
  * An indication that there was a buffer overflow.
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class BufferOverflowException extends IOException {
 
@@ -35,7 +35,7 @@ public class BufferOverflowException extends IOException {
 	/**
 	 * Create a new Exception
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public BufferOverflowException(){
 		super();
@@ -46,7 +46,7 @@ public class BufferOverflowException extends IOException {
 	 *
 	 * @param msg Error message.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public BufferOverflowException(String msg){
 		super(msg);

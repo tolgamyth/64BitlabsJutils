@@ -22,6 +22,7 @@ package com._64bitlabs.util.csv;
 
 import com._64bitlabs.util.exception.BadDelimiterException;
 import com._64bitlabs.util.exception.BadQuoteException;
+import gnu.trove.map.hash.THashMap;
 
 import java.io.IOException;
 import java.util.*;
@@ -246,7 +247,7 @@ public class LabeledCSVParser implements CSVParse {
 	private void setLabels() throws IOException {
 		labels = parse.getLine();
 		if (labels == null) return;
-		labelMap = new HashMap<String,Integer>();
+		labelMap = new THashMap<String,Integer>();
 		for (int i = 0; i < labels.length; i++){
 			labelMap.put(labels[i], new Integer(i));
 		}

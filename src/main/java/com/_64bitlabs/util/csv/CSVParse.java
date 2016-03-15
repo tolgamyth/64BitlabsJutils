@@ -31,7 +31,7 @@ import java.io.*;
  * CSV parsers should implement.
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public interface CSVParse {
 
@@ -42,7 +42,7 @@ public interface CSVParse {
 	 * @return the next value or null if there are no more values.
 	 * @throws IOException if an error occurs while reading.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String nextValue() throws IOException;
 
@@ -51,7 +51,7 @@ public interface CSVParse {
 	 *
 	 * @return line number or -1 if no tokens have been returned yet.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int lastLineNumber();
 
@@ -64,7 +64,7 @@ public interface CSVParse {
 	 * @return all the values from the line or null if there are no more values.
 	 * @throws IOException if an error occurs while reading.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String[] getLine() throws IOException;
 
@@ -76,7 +76,7 @@ public interface CSVParse {
 	 *
 	 * @return line number or -1 if no tokens have been returned yet.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int getLastLineNumber();
 
@@ -94,7 +94,7 @@ public interface CSVParse {
 	 * @return all the values from the file or null if there are no more values.
 	 * @throws IOException if an error occurs while reading.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String[][] getAllValues() throws IOException;
 

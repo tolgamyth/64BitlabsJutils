@@ -38,21 +38,21 @@ import java.io.*;
  * @see CircularObjectBuffer
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class CircularCharBuffer {
 
 	/**
 	 * The default size for a circular character buffer.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private final static int DEFAULT_SIZE = 1024;
 
 	/**
 	 * A buffer that will grow as things are added.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public final static int INFINITE_SIZE = -1;
 
@@ -76,69 +76,69 @@ public class CircularCharBuffer {
 	 * been saved to support a reset() of the Reader go from markPosition
 	 * to readPosition, wrapping around the end of the buffer.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected char[] buffer;
 	/**
 	 * Index of the first character available to be read.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected volatile int readPosition = 0;
 	/**
 	 * Index of the first character available to be written.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected volatile int writePosition = 0;
 	/**
 	 * Index of the first saved character. (To support stream marking.)
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected volatile int markPosition = 0;
 	/**
 	 * Number of characters that have to be saved
 	 * to support mark() and reset() on the Reader.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected volatile int markSize = 0;
 	/**
 	 * If this buffer is infinite (should resize itself when full)
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected volatile boolean infinite = false;
 	/**
 	 * True if a write to a full buffer should block until the buffer
 	 * has room, false if the write method should throw an IOException
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected boolean blockingWrite = true;
 	/**
 	 * The Reader that can empty this buffer.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected Reader reader = new CircularCharBufferReader();
 	/**
 	 * true if the close() method has been called on the Reader
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected boolean readerClosed = false;
 	/**
 	 * The Writer that can fill this buffer.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected Writer writer = new CircularCharBufferWriter();
 	/**
 	 * true if the close() method has been called on the writer
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected boolean writerClosed = false;
 
@@ -147,7 +147,7 @@ public class CircularCharBuffer {
 	 * will be cleared and the streams associated with this buffer
 	 * will be reopened if they had been closed.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void clear(){
 		synchronized (this){
@@ -172,7 +172,7 @@ public class CircularCharBuffer {
 	 *
 	 * @return the producer for this buffer.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public Writer getWriter(){
 		return writer;
@@ -187,7 +187,7 @@ public class CircularCharBuffer {
 	 *
 	 * @return the consumer for this buffer.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public Reader getReader(){
 		return reader;
@@ -203,7 +203,7 @@ public class CircularCharBuffer {
 	 *
 	 * @return the size in characters of this buffer
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int getAvailable(){
 		synchronized (this){
@@ -222,7 +222,7 @@ public class CircularCharBuffer {
 	 *
 	 * @return the available space in characters of this buffer
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int getSpaceLeft(){
 		synchronized (this){
@@ -240,7 +240,7 @@ public class CircularCharBuffer {
 	 *
 	 * @return the size in characters of this buffer
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int getSize(){
 		synchronized (this){
@@ -251,7 +251,7 @@ public class CircularCharBuffer {
 	/**
 	 * double the size of the buffer
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private void resize(){
 		char[] newBuffer = new char[buffer.length * 2];
@@ -278,7 +278,7 @@ public class CircularCharBuffer {
 	/**
 	 * Space available in the buffer which can be written.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private int spaceLeft(){
 		if (writePosition < markPosition){
@@ -294,7 +294,7 @@ public class CircularCharBuffer {
 	/**
 	 * Characters available for reading.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private int available(){
 		if (readPosition <= writePosition){
@@ -310,7 +310,7 @@ public class CircularCharBuffer {
 	/**
 	 * Characters saved for supporting marks.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private int marked(){
 		if (markPosition <= readPosition){
@@ -327,7 +327,7 @@ public class CircularCharBuffer {
 	 * If we have passed the markSize reset the
 	 * mark so that the space can be used.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private void ensureMark(){
 		if (marked() > markSize){
@@ -341,7 +341,7 @@ public class CircularCharBuffer {
 	 * Writing to a full buffer will block until space
 	 * is available rather than throw an exception.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public CircularCharBuffer(){
 		this (DEFAULT_SIZE, true);
@@ -362,7 +362,7 @@ public class CircularCharBuffer {
 	 *
 	 * @param size desired capacity of the buffer in characters or CircularCharBuffer.INFINITE_SIZE
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public CircularCharBuffer(int size){
 		this (size, true);
@@ -376,7 +376,7 @@ public class CircularCharBuffer {
 	 *        until space is available, false if an exception should
 	 *        be thrown instead.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public CircularCharBuffer(boolean blockingWrite){
 		this (DEFAULT_SIZE, blockingWrite);
@@ -399,7 +399,7 @@ public class CircularCharBuffer {
 	 *        until space is available, false if an exception should
 	 *        be thrown instead.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public CircularCharBuffer(int size, boolean blockingWrite){
 		if (size == INFINITE_SIZE){
@@ -415,7 +415,7 @@ public class CircularCharBuffer {
 	/**
 	 * Class for reading from a circular character buffer.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected class CircularCharBufferReader extends Reader {
 
@@ -426,7 +426,7 @@ public class CircularCharBuffer {
 		 *
 		 * @throws IOException never.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		@Override public void close() throws IOException {
 			synchronized (CircularCharBuffer.this){
@@ -446,7 +446,7 @@ public class CircularCharBuffer {
 		 * @throws IOException if the stream is closed, or the buffer size is greater
 		 * than or equal to the readAheadLimit.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		@Override public void mark(int readAheadLimit) throws IOException {
 			synchronized (CircularCharBuffer.this){
@@ -462,7 +462,7 @@ public class CircularCharBuffer {
 		 *
 		 * @return true, mark is supported.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		@Override public boolean markSupported() {
 			return true;
@@ -477,7 +477,7 @@ public class CircularCharBuffer {
 		 *     or -1 if the end of the stream has been reached
 		 * @throws IOException if the stream is closed.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		@Override public int read() throws IOException {
 			while (true){
@@ -514,7 +514,7 @@ public class CircularCharBuffer {
 		 *   the stream has been reached
 		 * @throws IOException if the stream is closed.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		@Override public int read(char[] cbuf) throws IOException {
 			return read(cbuf, 0, cbuf.length);
@@ -532,7 +532,7 @@ public class CircularCharBuffer {
 		 *   the stream has been reached
 		 * @throws IOException if the stream is closed.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		@Override public int read(char[] cbuf, int off, int len) throws IOException {
 			while (true){
@@ -575,7 +575,7 @@ public class CircularCharBuffer {
 		 *    the next read will block.
 		 * @throws IOException if the stream is closed.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		@Override public boolean ready() throws IOException {
 			synchronized (CircularCharBuffer.this){
@@ -592,7 +592,7 @@ public class CircularCharBuffer {
 		 *
 		 * @throws IOException if the stream is closed.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		@Override public void reset() throws IOException {
 			synchronized (CircularCharBuffer.this){
@@ -611,7 +611,7 @@ public class CircularCharBuffer {
 		 * @throws IllegalArgumentException if n is negative.
 		 * @throws IOException if the stream is closed.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		@Override public long skip(long n) throws IOException, IllegalArgumentException {
 			while (true){
@@ -651,7 +651,7 @@ public class CircularCharBuffer {
 	 * until there is some space available or throw an IOException
 	 * based on the CircularCharBuffer's preference.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected class CircularCharBufferWriter extends Writer {
 
@@ -665,7 +665,7 @@ public class CircularCharBuffer {
 		 *
 		 * @throws IOException never.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		@Override public void close() throws IOException {
 			synchronized (CircularCharBuffer.this){
@@ -681,7 +681,7 @@ public class CircularCharBuffer {
 		 *
 		 * @throws IOException if the stream is closed.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		@Override public void flush() throws IOException {
 			synchronized (CircularCharBuffer.this){
@@ -702,7 +702,7 @@ public class CircularCharBuffer {
 		 *   will have been written since the buffer was set to be non-blocking.
 		 * @throws IOException if the stream is closed, or the write is interrupted.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		@Override public void write(char[] cbuf) throws IOException {
 			write(cbuf, 0, cbuf.length);
@@ -721,7 +721,7 @@ public class CircularCharBuffer {
 		 *   will have been written since the buffer was set to be non-blocking.
 		 * @throws IOException if the stream is closed, or the write is interrupted.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		@Override public void write(char[] cbuf, int off, int len) throws IOException {
 			while (len > 0){
@@ -775,7 +775,7 @@ public class CircularCharBuffer {
 		 *   and the buffer is full.
 		 * @throws IOException if the stream is closed, or the write is interrupted.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		@Override public void write(int c) throws IOException {
 			boolean written = false;
@@ -819,7 +819,7 @@ public class CircularCharBuffer {
 		 *   will have been written since the buffer was set to be non-blocking.
 		 * @throws IOException if the stream is closed, or the write is interrupted.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		@Override public void write(String str) throws IOException {
 			write(str, 0, str.length());
@@ -838,7 +838,7 @@ public class CircularCharBuffer {
 		 *   will have been written since the buffer was set to be non-blocking.
 		 * @throws IOException if the stream is closed, or the write is interrupted.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		@Override public void write(String str, int off, int len) throws IOException {
 			while (len > 0){

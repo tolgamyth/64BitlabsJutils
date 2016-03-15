@@ -20,6 +20,9 @@ import java.util.TimeZone;
 
 import com._64bitlabs.util.string.StringHelper;
 import com._64bitlabs.util.UberProperties;
+import gnu.trove.map.TMap;
+import gnu.trove.map.hash.THashMap;
+import gnu.trove.set.hash.THashSet;
 
 import java.io.*;
 import java.util.*;
@@ -143,11 +146,11 @@ public class DateTimeParse {
 		return l;
 	}
 
-	private Map<String,Integer> monthWords = new HashMap<String,Integer>();
-	private Map<String,Integer> eraWords = new HashMap<String,Integer>();
-	private Set<String> weekdayWords = new HashSet<String>();
-	private Map<String,Integer> ordinalWords = new HashMap<String,Integer>();
-	private Map<String,Integer> ampmWords = new HashMap<String,Integer>();
+	private TMap<String,Integer> monthWords = new THashMap<String,Integer>();
+	private TMap<String,Integer> eraWords = new THashMap<String,Integer>();
+	private Set<String> weekdayWords = new THashSet<>();
+	private TMap<String,Integer> ordinalWords = new THashMap<String,Integer>();
+	private TMap<String,Integer> ampmWords = new THashMap<String,Integer>();
 
 	private static final String[] ALL_PROPERTIES = {
 		"","da","de","en","es","fr","it","nl","pl","pt","ro","ru","sv","tr"

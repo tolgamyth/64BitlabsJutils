@@ -6,7 +6,7 @@ package com._64bitlabs.util.regex;
  * "http://64bitlabs.com/utils/CommonRegex.html">64bitlabs.com</a>.
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public enum CommonRegex {
     EMAIL_PATTERN ("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[\\p{L}0-9-]+(\\.[\\p{L}0-9]+)*(\\.[\\p{L}]{2,})$"),

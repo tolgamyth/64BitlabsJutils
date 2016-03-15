@@ -120,7 +120,7 @@
  * </code></blockquote>
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class StringTokenizer implements java.util.Enumeration<String>, java.util.Iterator<String> {
 
@@ -128,7 +128,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * The string to be tokenized.
 	 * The code relies on this to never be null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected String text;
 
@@ -137,21 +137,21 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * Cached for performance.  This should be set whenever the
 	 * string we are working with is changed.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected int strLength;
 
 	/**
 	 * The set of non-token delimiters.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected String nontokenDelims;
 
 	/**
 	 * The set of token delimiters.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected String tokenDelims;
 
@@ -164,7 +164,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * following the end of the last token, or 0 to start), or
 	 * -1 if the entire string has been examined.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected int position;
 
@@ -178,7 +178,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * If returnEmptyTokens in false, then this variable will
 	 * always be false.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected boolean emptyReturned;
 
@@ -195,7 +195,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * the algorithm not to depend on the length of the delimiter string
 	 * for the common case.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected char maxDelimChar;
 
@@ -205,7 +205,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * a delimiter, has two delimiters next to each other, or
 	 * ends with a delimiter.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected boolean returnEmptyTokens;
 
@@ -216,7 +216,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * it is being parsed from position zero, for example, null strings are possible
 	 * at the very beginning.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected int delimsChangedPosition;
 
@@ -225,7 +225,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * have not yet been counted. It should be greater than or equal to zero
 	 * if the tokens have been counted.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected int tokenCount;
 
@@ -242,7 +242,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 *     and are themselves returned as tokens.
 	 * @throws NullPointerException if text is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public StringTokenizer(String text, String nontokenDelims, String tokenDelims){
 		this(text, nontokenDelims, tokenDelims, false);
@@ -268,7 +268,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * @param returnEmptyTokens true if empty tokens may be returned; false otherwise.
 	 * @throws NullPointerException if text is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public StringTokenizer(String text, String nontokenDelims, String tokenDelims, boolean returnEmptyTokens){
 		setDelims(nontokenDelims, tokenDelims);
@@ -298,7 +298,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 *     delimiters, the set of non-token delimiters is empty.
 	 * @throws NullPointerException if text is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public StringTokenizer(String text, String delims, boolean delimsAreTokens){
 		this(text, (delimsAreTokens ? null : delims), (delimsAreTokens ? delims : null));
@@ -315,7 +315,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * @param nontokenDelims the non-token delimiters.
 	 * @throws NullPointerException if text is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public StringTokenizer(String text, String nontokenDelims){
 		this(text, nontokenDelims, null);
@@ -331,7 +331,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * @param text a string to be parsed.
 	 * @throws NullPointerException if text is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public StringTokenizer(String text){
 		this(text, " \t\n\r\f", null);
@@ -348,7 +348,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * @param text a string to be parsed.
 	 * @throws NullPointerException if text is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setText(String text){
 		if (text == null){
@@ -376,7 +376,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * @param nontokenDelims delimiters that should not be returned as tokens.
 	 * @param tokenDelims delimiters that should be returned as tokens.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private void setDelims(String nontokenDelims, String tokenDelims){
 		this.nontokenDelims = nontokenDelims;
@@ -413,7 +413,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * @return <code>true</code> if and only if there is at least one token in the
 	 *          string after the current position; <code>false</code> otherwise.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public boolean hasMoreTokens(){
 
@@ -462,7 +462,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * @return the next token from this string tokenizer.
 	 * @throws NoSuchElementException if there are no more tokens in this tokenizer's string.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String nextToken(){
 		int workingPosition = position;
@@ -493,7 +493,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 *
 	 * @return <code>true</code> if there are more tokens, <code>false</code> otherwise.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public boolean skipDelimiters(){
 		int workingPosition = position;
@@ -531,7 +531,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 *    delimiter set.
 	 *
 	 * @see #nextToken()
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int countTokens(){
 
@@ -579,7 +579,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 *
 	 * @param delims the new set of non-token delimiters (the set of token delimiters will be empty).
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setDelimiters(String delims){
 		setDelims(delims, null);
@@ -594,7 +594,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 *    delimiters, the set of token delimiters is empty; true -- the first parameter
 	 *    specifies token delimiters, the set of non-token delimiters is empty.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setDelimiters(String delims, boolean delimsAreTokens){
 		setDelims((delimsAreTokens ? null : delims), (delimsAreTokens ? delims : null));
@@ -606,7 +606,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * @param nontokenDelims the new set of non-token delimiters.
 	 * @param tokenDelims the new set of token delimiters.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setDelimiters(String nontokenDelims, String tokenDelims){
 		setDelims(nontokenDelims, tokenDelims);
@@ -619,7 +619,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * @param tokenDelims the new set of token delimiters.
 	 * @param returnEmptyTokens true if empty tokens may be returned; false otherwise.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setDelimiters(String nontokenDelims, String tokenDelims, boolean returnEmptyTokens){
 		setDelims(nontokenDelims, tokenDelims);
@@ -638,7 +638,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 *    delimiter set.
 	 *
 	 * @see #countTokens()
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int countTokens(String delims){
 		setDelims(delims, null);
@@ -661,7 +661,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 *    delimiter set.
 	 *
 	 * @see #countTokens()
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int countTokens(String delims, boolean delimsAreTokens){
 		setDelims((delimsAreTokens ? null : delims), (delimsAreTokens ? delims : null));
@@ -681,7 +681,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 *    delimiter set.
 	 *
 	 * @see #countTokens()
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int countTokens(String nontokenDelims, String tokenDelims){
 		setDelims(nontokenDelims, tokenDelims);
@@ -702,7 +702,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 *    delimiter set.
 	 *
 	 * @see #countTokens()
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int countTokens(String nontokenDelims, String tokenDelims, boolean returnEmptyTokens){
 		setDelims(nontokenDelims, tokenDelims);
@@ -718,7 +718,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 *
 	 * @return true if we are at a juncture at which a token may be emitted, false otherwise.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private boolean advancePosition(){
 		// if we are returning empty tokens, we are just starting to tokenizer
@@ -824,7 +824,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * @throws NoSuchElementException if there are no more tokens in this tokenizer's string.
 	 * @see #nextToken()
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String nextToken(String nontokenDelims, String tokenDelims){
 		setDelims(nontokenDelims, tokenDelims);
@@ -852,7 +852,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * @throws NoSuchElementException if there are no more tokens in this tokenizer's string.
 	 * @see #nextToken()
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String nextToken(String nontokenDelims, String tokenDelims, boolean returnEmptyTokens){
 		setDelims(nontokenDelims, tokenDelims);
@@ -882,7 +882,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * @throws NoSuchElementException if there are no more tokens in this tokenizer's string.
 	 *
 	 * @see #nextToken(String,String)
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String nextToken(String delims, boolean delimsAreTokens){
 		return (delimsAreTokens ? nextToken(null, delims) : nextToken(delims, null));
@@ -900,7 +900,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 *     tokenizer's string.
 	 *
 	 * @see #nextToken(String,String)
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String nextToken(String nontokenDelims){
 		return nextToken(nontokenDelims, null);
@@ -914,7 +914,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * @return index of the first delimiter from the start index (inclusive), or -1
 	 *     if there are no more delimiters in the string
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private int indexOfNextDelimiter(int start){
 		char c;
@@ -940,7 +940,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 *
 	 * @see java.util.Enumeration
 	 * @see #hasMoreTokens()
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public boolean hasMoreElements(){
 		return hasMoreTokens();
@@ -957,7 +957,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 *
 	 * @see java.util.Enumeration
 	 * @see #nextToken()
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String nextElement(){
 		return nextToken();
@@ -972,7 +972,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 *
 	 * @see java.util.Iterator
 	 * @see #hasMoreTokens()
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public boolean hasNext(){
 		return hasMoreTokens();
@@ -989,7 +989,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 *
 	 * @see java.util.Iterator
 	 * @see #nextToken()
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String next(){
 		return nextToken();
@@ -1002,7 +1002,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * @throws UnsupportedOperationException always is thrown.
 	 *
 	 * @see java.util.Iterator
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void remove(){
 		throw new UnsupportedOperationException();
@@ -1027,7 +1027,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 *
 	 * @param returnEmptyTokens true iff empty tokens should be returned.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setReturnEmptyTokens(boolean returnEmptyTokens){
 		// this could effect the number of tokens
@@ -1042,7 +1042,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 *
 	 * @return the current position or -1 if the entire string has been tokenized.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int getCurrentPosition(){
 		return this.position;
@@ -1056,7 +1056,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 *
 	 * @return an array of tokens from this tokenizer.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String[] toArray(){
 		String[] tokenArray = new String[countTokens()];
@@ -1072,7 +1072,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 *
 	 * @return any part of the text that has not yet been tokenized.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String restOfText(){
 		return nextToken(null, null);
@@ -1087,7 +1087,7 @@ public class StringTokenizer implements java.util.Enumeration<String>, java.util
 	 * @return the next token from this string tokenizer.
 	 * @throws NoSuchElementException if there are no more tokens in this tokenizer's string.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String peek(){
 		// copy over state variables from the class to local

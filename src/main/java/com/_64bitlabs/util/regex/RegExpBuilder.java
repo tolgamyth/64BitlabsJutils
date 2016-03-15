@@ -1,5 +1,7 @@
 package com._64bitlabs.util.regex;
 
+import gnu.trove.set.hash.THashSet;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.regex.Pattern;
@@ -8,8 +10,8 @@ public class RegExpBuilder {
 	private StringBuilder _literal;
 	private Boolean _ignoreCase;
 	private Boolean _multiLine;
-	private HashSet<Character> _specialCharactersInsideCharacterClass;
-	private HashSet<Character> _specialCharactersOutsideCharacterClass;
+	private THashSet<Character> _specialCharactersInsideCharacterClass;
+	private THashSet<Character> _specialCharactersOutsideCharacterClass;
 	private StringBuilder _escapedString;
 	private int _min;
 	private int _max;
@@ -25,8 +27,8 @@ public class RegExpBuilder {
   
 	public RegExpBuilder() {
 		_literal = new StringBuilder();
-		_specialCharactersInsideCharacterClass = new HashSet<Character>(Arrays.asList(new Character[]{ '^', '-', ']' }));
-		_specialCharactersOutsideCharacterClass = new HashSet<Character>(Arrays.asList(new Character[]{ '.', '^', '$', '*', '+', '?', '(', ')', '[', '{' }));
+		_specialCharactersInsideCharacterClass = new THashSet<>(Arrays.asList(new Character[]{ '^', '-', ']' }));
+		_specialCharactersOutsideCharacterClass = new THashSet<>(Arrays.asList(new Character[]{ '.', '^', '$', '*', '+', '?', '(', ')', '[', '{' }));
 		_escapedString = new StringBuilder();
 		_clear();
 	}
@@ -397,7 +399,7 @@ public class RegExpBuilder {
   		return _escapeSpecialCharacters(s, _specialCharactersOutsideCharacterClass);
   	}
   
-  	private String _escapeSpecialCharacters(String s, HashSet<Character> specialCharacters) {
+  	private String _escapeSpecialCharacters(String s, THashSet<Character> specialCharacters) {
   		_escapedString = new StringBuilder();
   		for (int i = 0; i < s.length(); i++) {
   			char character = s.charAt(i);

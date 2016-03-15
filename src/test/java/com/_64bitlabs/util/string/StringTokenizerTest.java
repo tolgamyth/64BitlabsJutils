@@ -26,7 +26,7 @@ import junit.framework.TestCase;
  * "http://64bitlabs.com/utils/StringTokenizer.html">64bitlabs.com</a>.
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class StringTokenizerTest extends TestCase {
 

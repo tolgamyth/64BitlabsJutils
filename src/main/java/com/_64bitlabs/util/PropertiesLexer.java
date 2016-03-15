@@ -47,7 +47,7 @@ import java.io.*;
  *
  * @see com._64bitlabs.util.PropertiesToken
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 
 
@@ -301,7 +301,7 @@ class PropertiesLexer {
 	 *
 	 * @param args program arguments, of which the first is a filename
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void main(String[] args) {
 		InputStream in;

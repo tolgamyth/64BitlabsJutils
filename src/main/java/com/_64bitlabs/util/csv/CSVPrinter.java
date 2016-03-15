@@ -31,7 +31,7 @@ import java.io.*;
  *
  * @author Tolga Yilmaz info@64bitlabs.com
  * @author Pierre Dittgen <pierre dot dittgen at pass-tech dot fr>
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class CSVPrinter implements CSVPrint {
 
@@ -93,14 +93,14 @@ public class CSVPrinter implements CSVPrint {
 	/**
 	 * The place that the values get written.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected Writer out;
 
 	/**
 	 * True iff we just began a new line.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected boolean newLine = true;
 
@@ -112,7 +112,7 @@ public class CSVPrinter implements CSVPrint {
 	/**
 	 * Character used to start comments. (Default is '#')
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected char commentStart = COMMENT_START_DEFAULT;
 
@@ -208,7 +208,7 @@ public class CSVPrinter implements CSVPrint {
 	 *
 	 * @param out stream to which to print.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public CSVPrinter(OutputStream out){
 		this(
@@ -227,7 +227,7 @@ public class CSVPrinter implements CSVPrint {
 	 *
 	 * @param out stream to which to print.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public CSVPrinter(Writer out){
 		this(
@@ -248,7 +248,7 @@ public class CSVPrinter implements CSVPrint {
 	 * @param out stream to which to print.
 	 * @param commentStart Character used to start comments.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public CSVPrinter(OutputStream out, char commentStart){
 		this(
@@ -268,7 +268,7 @@ public class CSVPrinter implements CSVPrint {
 	 * @param out stream to which to print.
 	 * @param commentStart Character used to start comments.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public CSVPrinter(Writer out, char commentStart){
 		this(
@@ -419,7 +419,7 @@ public class CSVPrinter implements CSVPrint {
 	 *
 	 * @param value value to be outputted.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void println(String value){
 		try {
@@ -455,7 +455,7 @@ public class CSVPrinter implements CSVPrint {
 	 * any errors have occurred by invoking checkError().  If an I/O Exception is
 	 * desired, the client should use the corresponding writeln method.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void println(){
 		try {
@@ -494,7 +494,7 @@ public class CSVPrinter implements CSVPrint {
 	 *
 	 * @param values values to be outputted.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void println(String[] values){
 		try {
@@ -535,7 +535,7 @@ public class CSVPrinter implements CSVPrint {
 	 *
 	 * @param values values to be outputted.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void print(String[] values){
 		try {
@@ -577,7 +577,7 @@ public class CSVPrinter implements CSVPrint {
 	 *
 	 * @param values values to be outputted.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void println(String[][] values){
 		try {
@@ -625,7 +625,7 @@ public class CSVPrinter implements CSVPrint {
 	 *
 	 * @param comment the comment to output.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void printlnComment(String comment){
 		try {
@@ -691,7 +691,7 @@ public class CSVPrinter implements CSVPrint {
 	 *
 	 * @param value value to be outputted.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void print(String value){
 		try {
@@ -764,7 +764,7 @@ public class CSVPrinter implements CSVPrint {
 	 * @param value needs to be escaped and quoted
 	 * @return the value, escaped and quoted.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private String escapeAndQuote(String value){
 		int count = 2;

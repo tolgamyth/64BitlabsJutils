@@ -39,7 +39,7 @@ import java.io.*;
  * available.
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 
 class CGILexer {
@@ -254,7 +254,7 @@ class CGILexer {
 	 *
 	 * @param args program arguments, of which the first is a filename
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void main(String[] args) {
 		InputStream in;

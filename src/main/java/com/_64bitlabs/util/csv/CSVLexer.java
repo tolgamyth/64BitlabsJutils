@@ -76,7 +76,7 @@ import java.io.*;
  * </pre>
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 
 
@@ -331,7 +331,7 @@ public class CSVLexer {
 	 *
 	 * @param args program arguments, of which the first is a filename
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void main(String[] args){
 		InputStream in;
@@ -370,7 +370,7 @@ public class CSVLexer {
 	 * a pointer to a static variable).  If it is a pointer to a static
 	 * variable, it will be cloned.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private void ensureCharacterMapIsInstance(){
 		if (ZZ_CMAP == zzcmap_instance){
@@ -385,7 +385,7 @@ public class CSVLexer {
 	 * to be a delimiter so that the parsing doesn't break.  Examples of bad
 	 * characters are quotes, commas, and whitespace.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private boolean charIsSafe(char c){
 		// There are two character classes that one could use as a delimiter.
@@ -399,10 +399,10 @@ public class CSVLexer {
 	 * will make the state machine behave as if the characters were switched
 	 * when they are encountered in the input.
 	 *
-	 * @param old the old character, its value will be returned to initial
-	 * @param two second character
+	 * @param oldChar the old character, its value will be returned to initial
+	 * @param newChar second character
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private void updateCharacterClasses(char oldChar, char newChar){
 		// before modifying the character map, make sure it isn't static.
@@ -434,7 +434,7 @@ public class CSVLexer {
 	 * @param newDelim delimiter to which to switch.
 	 * @throws com._64bitlabs.util.exception.BadDelimiterException if the character cannot be used as a delimiter.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void changeDelimiter(char newDelim) throws BadDelimiterException {
 		if (newDelim == delimiter) return; // no need to do anything.
@@ -455,7 +455,7 @@ public class CSVLexer {
 	 * @param newQuote character to use for quoting.
 	 * @throws com._64bitlabs.util.exception.BadQuoteException if the character cannot be used as a quote.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void changeQuote(char newQuote) throws BadQuoteException {
 		if (newQuote == quote) return; // no need to do anything.
@@ -487,7 +487,7 @@ public class CSVLexer {
 	 * @param escapes a list of characters that will represent escape sequences.
 	 * @param replacements the list of repacement characters for those escape sequences.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setEscapes(String escapes, String replacements){
 		int length = escapes.length();
@@ -536,7 +536,7 @@ public class CSVLexer {
 	 *
 	 * @param commentDelims list of characters a comment line may start with.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setCommentStart(String commentDelims){
 		this.commentDelims = commentDelims;
@@ -555,7 +555,7 @@ public class CSVLexer {
 	 *
 	 * @return line number of the last token.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int getLineNumber(){
 		return lines;

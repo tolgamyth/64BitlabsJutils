@@ -45,7 +45,7 @@ import java.io.*;
  *
  * @author Santeri Paavolainen http://santtu.iki.fi/md5/
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class MD5InputStream extends FilterInputStream {
 	/**
@@ -74,7 +74,7 @@ public class MD5InputStream extends FilterInputStream {
 	 * @return the next byte of data, or -1 if the end of the stream is reached.
 	 * @throws IOException if an I/O error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public int read() throws IOException {
 		int c = in.read();
@@ -94,7 +94,7 @@ public class MD5InputStream extends FilterInputStream {
 	 * @param length the maximum number of bytes read.
 	 * @throws IOException if an I/O error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public int read(byte[] bytes, int offset, int length) throws IOException {
 		int	r;
@@ -110,7 +110,7 @@ public class MD5InputStream extends FilterInputStream {
 	 *
 	 * @return Array of 16 bytes, the hash of all read bytes.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public byte[] getHash(){
 		return md5.getHash();
@@ -121,7 +121,7 @@ public class MD5InputStream extends FilterInputStream {
 	 *
 	 * @return A string containing  the hash of all written bytes.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String getHashString(){
 		return md5.getHashString();

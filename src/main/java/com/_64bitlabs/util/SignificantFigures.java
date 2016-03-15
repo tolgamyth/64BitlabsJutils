@@ -80,7 +80,7 @@ package com._64bitlabs.util;
  * System.out.println(number);</pre>
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class SignificantFigures extends Number {
 
@@ -93,13 +93,13 @@ public class SignificantFigures extends Number {
 	 * could not be parsed, the original is stored
 	 * for toString purposes.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private String original;
 	/**
 	 * Buffer of the significant digits.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private StringBuffer digits;
 	/**
@@ -107,19 +107,19 @@ public class SignificantFigures extends Number {
 	 * decimal place were inserted after
 	 * the first digit.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private int mantissa = -1;
 	/**
 	 * positive if true, negative if false.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private boolean sign = true;
 	/**
 	 * True if this number has no non-zero digits.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private boolean isZero = false;
 
@@ -129,7 +129,7 @@ public class SignificantFigures extends Number {
 	 * @param number String representation of the number.
 	 * @throws NumberFormatException if the String is not a valid number.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public SignificantFigures(String number) throws NumberFormatException {
 		original = number;
@@ -141,7 +141,7 @@ public class SignificantFigures extends Number {
 	 *
 	 * @param number an 8 bit integer.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public SignificantFigures(byte number){
 		original = Byte.toString(number);
@@ -157,7 +157,7 @@ public class SignificantFigures extends Number {
 	 *
 	 * @param number a 16 bit integer.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	 public SignificantFigures(short number){
 		original = Short.toString(number);
@@ -173,7 +173,7 @@ public class SignificantFigures extends Number {
 	 *
 	 * @param number a 32 bit integer.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public SignificantFigures(int number){
 		original = String.valueOf(number);
@@ -189,7 +189,7 @@ public class SignificantFigures extends Number {
 	 *
 	 * @param number a 64 bit integer.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public SignificantFigures(long number){
 		original = Long.toString(number);
@@ -205,7 +205,7 @@ public class SignificantFigures extends Number {
 	 *
 	 * @param number a 32 bit floating point.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public SignificantFigures(float number){
 		original = Float.toString(number);
@@ -221,7 +221,7 @@ public class SignificantFigures extends Number {
 	 *
 	 * @param number a 64 bit floating point.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public SignificantFigures(double number){
 		original = Double.toString(number);
@@ -239,7 +239,7 @@ public class SignificantFigures extends Number {
 	 *
 	 * @param number a number.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public SignificantFigures(Number number){
 		original = number.toString();
@@ -258,7 +258,7 @@ public class SignificantFigures extends Number {
 	 *
 	 * @return the number of significant digits in this number.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int getNumberSignificantFigures() {
 		if (digits == null) return 0;
@@ -284,7 +284,7 @@ public class SignificantFigures extends Number {
 	 * @param place the desired place of the least significant digit.
 	 * @return this number.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public SignificantFigures setLSD(int place){
 		setLMSD(place, Integer.MIN_VALUE);
@@ -307,7 +307,7 @@ public class SignificantFigures extends Number {
 	 * @param mostPlace the desired place of the most significant digit or Integer.MIN_VALUE to ignore.
 	 * @return this number
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public SignificantFigures setLMSD(int leastPlace, int mostPlace){
 		if (digits != null && leastPlace != Integer.MIN_VALUE){
@@ -346,7 +346,7 @@ public class SignificantFigures extends Number {
 	 *
 	 * @return the decimal place of the least significant digit.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int getLSD(){
 		if (digits == null) return Integer.MIN_VALUE;
@@ -361,7 +361,7 @@ public class SignificantFigures extends Number {
 	 *
 	 * @return the decimal place of the least significant digit.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int getMSD(){
 		if (digits == null) return Integer.MIN_VALUE;
@@ -378,7 +378,7 @@ public class SignificantFigures extends Number {
 	 *
 	 * @return representation of this number.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public String toString() {
 		if (digits == null) return original;
@@ -424,7 +424,7 @@ public class SignificantFigures extends Number {
 	 *
 	 * @return representation of this number in scientific notation.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String toScientificNotation() {
 		if (digits == null) return original;
@@ -446,7 +446,7 @@ public class SignificantFigures extends Number {
 	 * Parsing state:
 	 * Initial state before anything read.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private final static int INITIAL = 0;
 	/**
@@ -454,7 +454,7 @@ public class SignificantFigures extends Number {
 	 * State in which a possible sign and
 	 * possible leading zeros have been read.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private final static int LEADZEROS = 1;
 	/**
@@ -465,7 +465,7 @@ public class SignificantFigures extends Number {
 	 * zeros.  The decimal place has no
 	 * been encountered yet.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private final static int MIDZEROS = 2;
 	/**
@@ -475,7 +475,7 @@ public class SignificantFigures extends Number {
 	 * has been read.  The decimal place has no
 	 * been encountered yet.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private final static int DIGITS = 3;
 	/**
@@ -484,7 +484,7 @@ public class SignificantFigures extends Number {
 	 * leading zeros, and a decimal point
 	 * have been encountered.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private final static int LEADZEROSDOT = 4;
 	/**
@@ -493,7 +493,7 @@ public class SignificantFigures extends Number {
 	 * at least one nonzero digit and a
 	 * decimal point have been encountered.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private final static int DIGITSDOT = 5;
 	/**
@@ -501,7 +501,7 @@ public class SignificantFigures extends Number {
 	 * State in which the exponent symbol
 	 * 'E' has been encountered.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private final static int MANTISSA = 6;
 	/**
@@ -511,7 +511,7 @@ public class SignificantFigures extends Number {
 	 * by a possible sign or some number
 	 * of digits.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private final static int MANTISSADIGIT = 7;
 
@@ -525,7 +525,7 @@ public class SignificantFigures extends Number {
 	 * @param number String representation of a number.
 	 * @throws NumberFormatException if the string is not a valid number.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private void parse(String number) throws NumberFormatException {
 		int length = number.length();
@@ -753,7 +753,7 @@ public class SignificantFigures extends Number {
 	 * @param significantFigures desired number of significant figures.
 	 * @return This number.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public SignificantFigures setNumberSignificantFigures(int significantFigures){
 		if (significantFigures <= 0) throw new IllegalArgumentException("Desired number of significant figures must be positive.");
@@ -819,7 +819,7 @@ public class SignificantFigures extends Number {
 	 * @return the numeric value represented by this object after conversion to type byte.
 	 * @throws NumberFormatException if this number cannot be converted to a byte.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public byte byteValue() throws NumberFormatException {
 		return Byte.parseByte(original);
@@ -831,7 +831,7 @@ public class SignificantFigures extends Number {
 	 * @return the numeric value represented by this object after conversion to type double.
 	 * @throws NumberFormatException if this number cannot be converted to a double.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public double doubleValue() throws NumberFormatException {
 		return Double.parseDouble(original);
@@ -843,7 +843,7 @@ public class SignificantFigures extends Number {
 	 * @return the numeric value represented by this object after conversion to type float.
 	 * @throws NumberFormatException if this number cannot be converted to a float.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public float floatValue() throws NumberFormatException {
 		return Float.parseFloat(original);
@@ -855,7 +855,7 @@ public class SignificantFigures extends Number {
 	 * @return the numeric value represented by this object after conversion to type int.
 	 * @throws NumberFormatException if this number cannot be converted to a int.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public int intValue() throws NumberFormatException {
 		return Integer.parseInt(original);
@@ -867,7 +867,7 @@ public class SignificantFigures extends Number {
 	 * @return the numeric value represented by this object after conversion to type long.
 	 * @throws NumberFormatException if this number cannot be converted to a long.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public long longValue() throws NumberFormatException {
 		return Long.parseLong(original);
@@ -879,7 +879,7 @@ public class SignificantFigures extends Number {
 	 * @return the numeric value represented by this object after conversion to type short.
 	 * @throws NumberFormatException if this number cannot be converted to a short.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public short shortValue() throws NumberFormatException {
 		return Short.parseShort(original);

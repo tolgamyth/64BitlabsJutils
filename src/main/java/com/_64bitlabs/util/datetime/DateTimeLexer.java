@@ -50,7 +50,7 @@ import java.io.Reader;
  *
  * @see com._64bitlabs.util.datetime.DateTimeToken
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 
 

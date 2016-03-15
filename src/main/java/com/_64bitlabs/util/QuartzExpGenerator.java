@@ -1,5 +1,7 @@
 package com._64bitlabs.util;
 
+import gnu.trove.map.TMap;
+import gnu.trove.map.hash.THashMap;
 import org.quartz.CronExpression;
 import org.quartz.core.QuartzScheduler;
 
@@ -16,7 +18,7 @@ import java.util.Map;
  * "http://64bitlabs.com/utils/QuartzExpGenerator.html">64bitlabs.com</a>.
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class QuartzExpGenerator {
 
@@ -90,7 +92,7 @@ public class QuartzExpGenerator {
         if (cronRegex == null)
         {
             // numbers intervals and regex
-            Map<String, String> numbers = new HashMap<String, String>();
+            TMap<String, String> numbers = new THashMap<>();
             numbers.put("sec", "[0-5]?\\d");
             numbers.put("min", "[0-5]?\\d");
             numbers.put("hour", "[01]?\\d|2[0-3]");
@@ -99,7 +101,7 @@ public class QuartzExpGenerator {
             numbers.put("dow", "[0-6]");
             numbers.put("year", "|\\d{4}");
 
-            Map<String, String> field_re = new HashMap<String, String>();
+            TMap<String, String> field_re = new THashMap<>();
 
             // expand regex to contain different time specifiers
             for (String field : numbers.keySet())

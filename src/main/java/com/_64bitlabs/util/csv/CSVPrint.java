@@ -33,7 +33,7 @@ import java.io.*;
  *
  * @author Tolga Yilmaz info@64bitlabs.com
  * @author Pierre Dittgen <pierre dot dittgen at pass-tech dot fr>
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public interface CSVPrint {
 
@@ -90,7 +90,7 @@ public interface CSVPrint {
 	 *
 	 * @param value value to be outputted.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void println(String value);
 
@@ -112,7 +112,7 @@ public interface CSVPrint {
 	 * any errors have occurred by invoking checkError().  If an I/O Exception is
 	 * desired, the client should use the corresponding writeln method.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void println();
 
@@ -136,7 +136,7 @@ public interface CSVPrint {
 	 *
 	 * @param values values to be outputted.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void println(String[] values);
 
@@ -163,7 +163,7 @@ public interface CSVPrint {
 	 *
 	 * @param values values to be outputted.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void println(String[][] values);
 
@@ -189,7 +189,7 @@ public interface CSVPrint {
 	 *
 	 * @param comment the comment to output.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void printlnComment(String comment);
 
@@ -214,7 +214,7 @@ public interface CSVPrint {
 	 *
 	 * @param value value to be outputted.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void print(String value);
 

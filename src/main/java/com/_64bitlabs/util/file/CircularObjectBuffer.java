@@ -31,21 +31,21 @@ import com._64bitlabs.util.exception.BufferOverflowException;
  *
  * @author Tolga Yilmaz info@64bitlabs.com
  * @param <ElementType> Type of object allowed in this circular buffer
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class CircularObjectBuffer <ElementType> {
 
 	/**
 	 * The default size for a circular object buffer.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private final static int DEFAULT_SIZE = 1024;
 
 	/**
 	 * A buffer that will grow as things are added.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public final static int INFINITE_SIZE = -1;
 
@@ -65,32 +65,32 @@ public class CircularObjectBuffer <ElementType> {
 	 * goes from the write position to one less than the readPosition,
 	 * wrapping around the end of the buffer.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected ElementType[] buffer;
 	/**
 	 * Index of the first Object available to be read.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected volatile int readPosition = 0;
 	/**
 	 * Index of the first Object available to be written.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected volatile int writePosition = 0;
 	/**
 	 * If this buffer is infinite (should resize itself when full)
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected volatile boolean infinite = false;
 	/**
 	 * True if a write to a full buffer should block until the buffer
 	 * has room, false if the write method should throw an IOException
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected boolean blockingWrite = true;
 
@@ -99,7 +99,7 @@ public class CircularObjectBuffer <ElementType> {
 	 * point reading from the buffer may return  null if the buffer
 	 * is empty, otherwise a read will block until an Object is available.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected boolean inputDone = false;
 
@@ -108,7 +108,7 @@ public class CircularObjectBuffer <ElementType> {
 	 * will be cleared and the streams associated with this buffer
 	 * will be reopened if they had been closed.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void clear(){
 		synchronized (this){
@@ -128,7 +128,7 @@ public class CircularObjectBuffer <ElementType> {
 	 *
 	 * @return the size in Objects of this buffer
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int getAvailable(){
 		synchronized (this){
@@ -147,7 +147,7 @@ public class CircularObjectBuffer <ElementType> {
 	 *
 	 * @return the available space in Objects of this buffer
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int getSpaceLeft(){
 		synchronized (this){
@@ -165,7 +165,7 @@ public class CircularObjectBuffer <ElementType> {
 	 *
 	 * @return the size in Objects of this buffer
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int getSize(){
 		synchronized (this){
@@ -180,7 +180,7 @@ public class CircularObjectBuffer <ElementType> {
 	/**
 	 * double the size of the buffer
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private void resize(){
 		ElementType[] newBuffer = createArray(buffer.length * 2);
@@ -205,7 +205,7 @@ public class CircularObjectBuffer <ElementType> {
 	/**
 	 * Space available in the buffer which can be written.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private int spaceLeft(){
 		if (writePosition < readPosition){
@@ -221,7 +221,7 @@ public class CircularObjectBuffer <ElementType> {
 	/**
 	 * Objects available for reading.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private int available(){
 		if (readPosition <= writePosition){
@@ -239,7 +239,7 @@ public class CircularObjectBuffer <ElementType> {
 	 * Writing to a full buffer will block until space
 	 * is available rather than throw an exception.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public CircularObjectBuffer(){
 		this (DEFAULT_SIZE, true);
@@ -260,7 +260,7 @@ public class CircularObjectBuffer <ElementType> {
 	 *
 	 * @param size desired capacity of the buffer in Objects or CircularObjectBuffer.INFINITE_SIZE.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public CircularObjectBuffer(int size){
 		this (size, true);
@@ -274,7 +274,7 @@ public class CircularObjectBuffer <ElementType> {
 	 *        until space is available, false if an exception should
 	 *        be thrown instead.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public CircularObjectBuffer(boolean blockingWrite){
 		this (DEFAULT_SIZE, blockingWrite);
@@ -297,7 +297,7 @@ public class CircularObjectBuffer <ElementType> {
 	 *        until space is available, false if an exception should
 	 *        be thrown instead.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public CircularObjectBuffer(int size, boolean blockingWrite){
 		if (size == INFINITE_SIZE){
@@ -320,7 +320,7 @@ public class CircularObjectBuffer <ElementType> {
 	 * @return The Object read, or null if there are no more objects
 	 * @throws InterruptedException if the thread is interrupted while waiting.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public ElementType read() throws InterruptedException {
 		while (true){
@@ -352,7 +352,7 @@ public class CircularObjectBuffer <ElementType> {
 	 *     be no more objects available.
 	 * @throws InterruptedException if the thread is interrupted while waiting.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int read(ElementType[] buf) throws InterruptedException {
 		return read(buf, 0, buf.length);
@@ -371,7 +371,7 @@ public class CircularObjectBuffer <ElementType> {
 	 *     be no more objects available.
 	 * @throws InterruptedException if the thread is interrupted while waiting.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int read(ElementType[] buf, int off, int len) throws InterruptedException {
 		while (true){
@@ -412,7 +412,7 @@ public class CircularObjectBuffer <ElementType> {
 	 * @throws IllegalArgumentException if n is negative.
 	 * @throws InterruptedException if the thread is interrupted while waiting.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public long skip(long n) throws InterruptedException, IllegalArgumentException {
 		while (true){
@@ -448,7 +448,7 @@ public class CircularObjectBuffer <ElementType> {
 	 * will cause an IllegalStateException to be thrown. Calling done() multiple times,
 	 * however, has no effect.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void done(){
 		synchronized (this){
@@ -469,7 +469,7 @@ public class CircularObjectBuffer <ElementType> {
 	 * @throws IllegalStateException if done() has been called.
 	 * @throws InterruptedException if the write is interrupted.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void write(ElementType[] buf) throws BufferOverflowException, IllegalStateException, InterruptedException {
 		write(buf, 0, buf.length);
@@ -490,7 +490,7 @@ public class CircularObjectBuffer <ElementType> {
 	 * @throws IllegalStateException if done() has been called.
 	 * @throws InterruptedException if the write is interrupted.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void write(ElementType[] buf, int off, int len) throws BufferOverflowException, IllegalStateException, InterruptedException {
 		while (len > 0){
@@ -540,7 +540,7 @@ public class CircularObjectBuffer <ElementType> {
 	 * @throws IllegalStateException if done() has been called.
 	 * @throws InterruptedException if the write is interrupted.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void write(ElementType o) throws BufferOverflowException, IllegalStateException, InterruptedException {
 		boolean written = false;

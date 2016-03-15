@@ -39,7 +39,7 @@ import java.io.Reader;
  * Tokenize a command line into application and arguments.
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 
 class BrowserCommandLexer {

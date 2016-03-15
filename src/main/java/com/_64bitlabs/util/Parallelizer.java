@@ -1,8 +1,5 @@
 /*
- * Copyright (C) 2004-2005 Matt Conway
- * http://simplygenius.com/
-
- * Copyright (C) 2005-2010 Tolga Yilmaz
+ * Copyright (C) 2014-2016 Tolga Yilmaz
  * info@64bitlabs.com
  *
  * This program is free software; you can redistribute it and/or modify
@@ -19,6 +16,8 @@
  */
 
 package com._64bitlabs.util;
+
+import gnu.trove.set.hash.THashSet;
 
 import java.util.*;
 
@@ -108,12 +107,12 @@ public class Parallelizer
 	 * This set is also used as a lock to synchronize
 	 * anything that touches running threads.
 	 */
-	private HashSet<Thread> runningThreads = new HashSet<Thread>();
+	private THashSet<Thread> runningThreads = new THashSet<>();
 
 	/**
 	 * A queue of jobs that have not yet been started.
 	 */
-	private LinkedList<Thread> toRunQueue = new LinkedList<Thread>();
+	private LinkedList<Thread> toRunQueue = new LinkedList<>();
 
 	/**
 	 * Run the given job.  The given job is either run

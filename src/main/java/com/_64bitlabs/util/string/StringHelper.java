@@ -17,6 +17,8 @@
 
 package com._64bitlabs.util.string;
 
+import gnu.trove.map.hash.THashMap;
+
 import java.util.Map;
 import java.util.HashMap;
 import java.util.regex.Pattern;
@@ -27,7 +29,7 @@ import java.util.regex.Pattern;
  * "http://64bitlabs.com/utils/StringHelper.html">64bitlabs.com</a>.
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class StringHelper {
 
@@ -44,7 +46,7 @@ public class StringHelper {
 	 * @return padded String.
 	 * @throws NullPointerException if s is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String prepad(String s, int length){
 		return prepad(s, length, ' ');
@@ -64,7 +66,7 @@ public class StringHelper {
 	 * @return padded String.
 	 * @throws NullPointerException if s is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String prepad(String s, int length, char c){
 		int needed = length - s.length();
@@ -112,7 +114,7 @@ public class StringHelper {
 	 * @return padded String.
 	 * @throws NullPointerException if s is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String postpad(String s, int length){
 		return postpad(s, length, ' ');
@@ -132,7 +134,7 @@ public class StringHelper {
 	 * @return padded String.
 	 * @throws NullPointerException if s is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String postpad(String s, int length, char c){
 		int needed = length - s.length();
@@ -165,7 +167,7 @@ public class StringHelper {
 	 * @return padded String.
 	 * @throws NullPointerException if s is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String midpad(String s, int length){
 		return midpad(s, length, ' ');
@@ -190,7 +192,7 @@ public class StringHelper {
 	 * @return padded String.
 	 * @throws NullPointerException if s is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String midpad(String s, int length, char c){
 		int needed = length - s.length();
@@ -242,7 +244,7 @@ public class StringHelper {
 	 * @return an array of tokens.
 	 * @throws NullPointerException if s is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String[] split(String s, String delimiter){
 		int delimiterLength;
@@ -500,7 +502,7 @@ public class StringHelper {
 	 * @return a string with all the occurrences of the string to find replaced.
 	 * @throws NullPointerException if s is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String replace(String s, String find, String replace){
 		int findLength;
@@ -610,7 +612,7 @@ public class StringHelper {
 	 * @return escaped String
 	 * @throws NullPointerException if s is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String escapeHTML(String s){
 		int length = s.length();
@@ -724,7 +726,7 @@ public class StringHelper {
 	 * @return escaped String
 	 * @throws NullPointerException if s is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String escapeSQL(String s){
 		int length = s.length();
@@ -781,7 +783,7 @@ public class StringHelper {
 	 * @return escaped String
 	 * @throws NullPointerException if s is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String escapeJavaLiteral(String s){
 		int length = s.length();
@@ -845,7 +847,7 @@ public class StringHelper {
 	 * @return trimmed String.
 	 * @throws NullPointerException if s is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String trim(String s, String c){
 		int length = s.length();
@@ -887,7 +889,7 @@ public class StringHelper {
 		return s.substring(start, end);
 	}
 
-	private static HashMap<String,Integer> htmlEntities = new HashMap<String,Integer>();
+	private static THashMap<String,Integer> htmlEntities = new THashMap<>();
 	static {
 		htmlEntities.put("n"+"b"+"s"+"p", new Integer(160));
 		htmlEntities.put("i"+"e"+"x"+"c"+"l", new Integer(161));
@@ -1151,7 +1153,7 @@ public class StringHelper {
 	 * @return un-escaped String.
 	 * @throws NullPointerException if s is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String unescapeHTML(String s){
 		StringBuffer result = new StringBuffer(s.length());

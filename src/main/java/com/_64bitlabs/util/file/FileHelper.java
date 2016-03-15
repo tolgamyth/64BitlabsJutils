@@ -29,14 +29,14 @@ import java.util.Locale;
  * "http://64bitlabs.com/utils/FileHelper.html">64bitlabs.com</a>.
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class FileHelper {
 
 	/**
 	 * Locale specific strings displayed to the user.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected static ResourceBundle labels = ResourceBundle.getBundle("FileHelper",  Locale.getDefault());
 
@@ -51,7 +51,7 @@ public class FileHelper {
 	 * @param to desired destination of the file.
 	 * @throws IOException if an error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void move(File from, File to) throws IOException {
 		move(from, to, false);
@@ -66,7 +66,7 @@ public class FileHelper {
 	 * @param overwrite If false, an exception will be thrown rather than overwrite a file.
 	 * @throws IOException if an error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void move(File from, File to, boolean overwrite) throws IOException {
 		if (to.exists()){
@@ -133,7 +133,7 @@ public class FileHelper {
 	/**
 	 * Buffer size when reading from input stream.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private final static int BUFFER_SIZE = 1024;
 
@@ -144,7 +144,7 @@ public class FileHelper {
 	 * @param out data destination
 	 * @throws IOException in an input or output error occurs
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private static void copy(InputStream in, OutputStream out) throws IOException {
 		byte[] buffer = new byte[BUFFER_SIZE];

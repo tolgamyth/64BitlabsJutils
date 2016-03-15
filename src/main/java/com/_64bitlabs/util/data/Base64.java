@@ -142,42 +142,42 @@ import java.util.Locale;
  * </blockquote>
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class Base64 {
 
 	/**
 	 * Symbol that represents the end of an input stream
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private static final int END_OF_INPUT = -1;
 
 	/**
 	 * A character that is not a valid base 64 character.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private static final int NON_BASE_64 = -1;
 
 	/**
 	 * A character that is not a valid base 64 character.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private static final int NON_BASE_64_WHITESPACE = -2;
 
 	/**
 	 * A character that is not a valid base 64 character.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private static final int NON_BASE_64_PADDING = -3;
 
 	/**
 	 * This class need not be instantiated, all methods are static.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private Base64(){
 		// should not be called
@@ -187,7 +187,7 @@ public class Base64 {
 	 * Table of the sixty-four characters that are used as
 	 * the Base64 alphabet: [a-z0-9A-Z+/]
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected static final byte[] base64Chars = {
 		'A','B','C','D','E','F','G','H',
@@ -205,7 +205,7 @@ public class Base64 {
 	 * reversebase64Chars[byte] gives n for the nth Base64
 	 * character or negative if a character is not a Base64 character.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected static final byte[] reverseBase64Chars = new byte[0x100];
 	static {
@@ -229,14 +229,14 @@ public class Base64 {
 	/**
 	 * Version number of this program
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static final String version = "1.2";
 
 	/**
 	 * Locale specific strings displayed to the user.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected static ResourceBundle labels = ResourceBundle.getBundle("Base64",  Locale.getDefault());
 
@@ -308,7 +308,7 @@ public class Base64 {
 	 *
 	 * @param args Command line arguments.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void main(String[] args){
 		CmdLn commandLine = new CmdLn(
@@ -556,7 +556,7 @@ public class Base64 {
 	 * @param string The data to encode.
 	 * @return An encoded String.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String encode(String string){
 		return new String(encode(string.getBytes()));
@@ -571,7 +571,7 @@ public class Base64 {
 	 * @throws UnsupportedEncodingException if the character encoding specified is not supported.
 	 * @return An encoded String.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String encode(String string, String enc) throws UnsupportedEncodingException {
 		return new String(encode(string.getBytes(enc)), enc);
@@ -615,7 +615,7 @@ public class Base64 {
 	 * @param bytes The data to encode.
 	 * @return Encoded bytes.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static byte[] encode(byte[] bytes){
 		return encode(bytes, false);
@@ -662,7 +662,7 @@ public class Base64 {
 	 * @param fIn File to be encoded (will be overwritten).
 	 * @throws IOException if an input or output error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void encode(File fIn) throws IOException {
 		encode(fIn, fIn, true);
@@ -675,7 +675,7 @@ public class Base64 {
 	 * @param lineBreaks  Whether to insert line breaks every 76 characters in the output.
 	 * @throws IOException if an input or output error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void encode(File fIn, boolean lineBreaks) throws IOException {
 		encode(fIn, fIn, lineBreaks);
@@ -689,7 +689,7 @@ public class Base64 {
 	 * @param fOut File to which the results should be written (may be the same as fIn).
 	 * @throws IOException if an input or output error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void encode(File fIn, File fOut) throws IOException {
 		encode(fIn, fOut, true);
@@ -703,7 +703,7 @@ public class Base64 {
 	 * @param lineBreaks  Whether to insert line breaks every 76 characters in the output.
 	 * @throws IOException if an input or output error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void encode(File fIn, File fOut, boolean lineBreaks) throws IOException {
 		File temp = null;
@@ -741,7 +741,7 @@ public class Base64 {
 	 * @param out Stream to which to write encoded data.
 	 * @throws IOException if there is a problem reading or writing.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void encode(InputStream in, OutputStream out) throws IOException {
 		encode(in, out, true);
@@ -755,7 +755,7 @@ public class Base64 {
 	 * @param lineBreaks Whether to insert line breaks every 76 characters in the output.
 	 * @throws IOException if there is a problem reading or writing.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void encode(InputStream in, OutputStream out, boolean lineBreaks) throws IOException {
 		// Base64 encoding converts three bytes of input to
@@ -828,7 +828,7 @@ public class Base64 {
 	 * @param string The data to decode.
 	 * @return A decoded String.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String decode(String string){
 		return new String(decode(string.getBytes()));
@@ -844,7 +844,7 @@ public class Base64 {
 	 * @throws UnsupportedEncodingException if the character encoding specified is not supported.
 	 * @return A decoded String.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String decode(String string, String enc) throws UnsupportedEncodingException {
 		return new String(decode(string.getBytes(enc)), enc);
@@ -861,7 +861,7 @@ public class Base64 {
 	 * @throws UnsupportedEncodingException if the character encoding specified is not supported.
 	 * @return A decoded String.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String decode(String string, String encIn, String encOut) throws UnsupportedEncodingException {
 		return new String(decode(string.getBytes(encIn)), encOut);
@@ -1036,7 +1036,7 @@ public class Base64 {
 	 * @param bytes The data to decode.
 	 * @return Decoded bytes.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static byte[] decode(byte[] bytes){
 		ByteArrayInputStream in = new ByteArrayInputStream(bytes);
@@ -1072,7 +1072,7 @@ public class Base64 {
 	 * @param out Stream to which to write decoded data.
 	 * @throws IOException if an IO error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void decode(byte[] bytes, OutputStream out) throws IOException {
 		ByteArrayInputStream in = new ByteArrayInputStream(bytes);
@@ -1105,7 +1105,7 @@ public class Base64 {
 	 * @throws IOException if an IO error occurs.
 	 * @throws Base64DecodingException if unexpected data is encountered.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void decode(File fIn) throws IOException {
 		decode(fIn, fIn, true);
@@ -1122,7 +1122,7 @@ public class Base64 {
 	 * @throws IOException if an IO error occurs.
 	 * @throws Base64DecodingException if unexpected data is encountered when throwExceptions is specified.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void decode(File fIn, boolean throwExceptions) throws IOException {
 		decode(fIn, fIn, throwExceptions);
@@ -1139,7 +1139,7 @@ public class Base64 {
 	 * @throws IOException if an IO error occurs.
 	 * @throws Base64DecodingException if unexpected data is encountered.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void decode(File fIn, File fOut) throws IOException {
 		decode(fIn, fOut, true);
@@ -1157,7 +1157,7 @@ public class Base64 {
 	 * @throws IOException if an IO error occurs.
 	 * @throws Base64DecodingException if unexpected data is encountered when throwExceptions is specified.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void decode(File fIn, File fOut, boolean throwExceptions) throws IOException {
 		File temp = null;
@@ -1205,7 +1205,7 @@ public class Base64 {
 	 * @throws IOException if an IO Error occurs.
 	 * @throws Base64DecodingException if unexpected data is encountered when throwExceptions is specified.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private static final int readBase64(InputStream in, boolean throwExceptions) throws IOException {
 		int read;
@@ -1241,7 +1241,7 @@ public class Base64 {
 	 * @return decoded data.
 	 * @throws IOException if an IO error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static byte[] decodeToBytes(InputStream in) throws IOException {
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -1294,7 +1294,7 @@ public class Base64 {
 	 * @throws IOException if an IO error occurs.
 	 * @throws Base64DecodingException if unexpected data is encountered.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void decode(InputStream in, OutputStream out) throws IOException {
 		decode(in, out, true);
@@ -1312,7 +1312,7 @@ public class Base64 {
 	 * @throws IOException if an IO error occurs.
 	 * @throws Base64DecodingException if unexpected data is encountered when throwExceptions is specified.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void decode(InputStream in, OutputStream out, boolean throwExceptions) throws IOException {
 		// Base64 decoding converts four bytes of input to three bytes of output
@@ -1376,7 +1376,7 @@ public class Base64 {
 	 * @param bytes data that could be in base64 format.
 	 * @return true iff the array appears to be in base64 format
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static boolean isBase64(byte[] bytes){
 		try {
@@ -1412,7 +1412,7 @@ public class Base64 {
 	 * @param string String that may be in base64 format.
 	 * @return Best guess as to whether the data is in base64 format.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static boolean isBase64(String string){
 		return isBase64(string.getBytes());
@@ -1467,7 +1467,7 @@ public class Base64 {
 	 * @return Best guess as to whether the data is in base64 format.
 	 * @throws IOException if an IO error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static boolean isBase64(File fIn) throws IOException {
 		return isBase64(new BufferedInputStream(new FileInputStream(fIn)));
@@ -1496,7 +1496,7 @@ public class Base64 {
 	 * @return Best guess as to whether the data is in base64 format.
 	 * @throws IOException if an IO error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static boolean isBase64(InputStream in) throws IOException {
 		long numBase64Chars = 0;

@@ -45,7 +45,7 @@ import java.io.*;
  *
  * @author Santeri Paavolainen http://santtu.iki.fi/md5/
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class MD5OutputStream extends FilterOutputStream {
 
@@ -58,7 +58,7 @@ public class MD5OutputStream extends FilterOutputStream {
 	 * Creates MD5OutputStream
 	 * @param out	The output stream
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public MD5OutputStream(OutputStream out) {
 		super(out);
@@ -71,7 +71,7 @@ public class MD5OutputStream extends FilterOutputStream {
 	 * @param b the byte.
 	 * @throws IOException if an I/O error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public void write(int b) throws IOException {
 		out.write(b);
@@ -87,7 +87,7 @@ public class MD5OutputStream extends FilterOutputStream {
 	 * @param len the number of bytes to write.
 	 * @throws IOException if an I/O error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public void write(byte b[], int off, int len) throws IOException {
 		out.write(b, off, len);
@@ -99,7 +99,7 @@ public class MD5OutputStream extends FilterOutputStream {
 	 *
 	 * @return Array of 16 bytes, the hash of all written bytes.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public byte[] getHash(){
 		return md5.getHash();
@@ -110,7 +110,7 @@ public class MD5OutputStream extends FilterOutputStream {
 	 *
 	 * @return A string containing  the hash of all written bytes.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String getHashString(){
 		return md5.getHashString();

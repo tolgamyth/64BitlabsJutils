@@ -17,6 +17,8 @@
  */
 
 package com._64bitlabs.util;
+import gnu.trove.map.hash.THashMap;
+
 import java.io.*;
 import java.net.URLDecoder;
 import java.util.*;
@@ -28,14 +30,14 @@ import java.util.*;
  * "http://64bitlabs.com/utils/CGIParser.html">64bitlabs.com</a>.
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class CGIParser {
 
 	/**
 	 * Hash of names to Array Lists of values.
 	 */
-	private HashMap<String,ArrayList<String>> nameValuePairHash = new HashMap<String,ArrayList<String>>();
+	private THashMap<String,ArrayList<String>> nameValuePairHash = new THashMap<>();
 
 	/**
 	 * Array list of NameValuePair objects.
@@ -55,7 +57,7 @@ public class CGIParser {
 	 * @throws IOException If an input error occurs
 	 * @deprecated This method does not decode URLEncoded values properly.  Please use a method that specifies a character set.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Deprecated public CGIParser(InputStream in) throws IOException {
 		if (in == null) return;
@@ -95,7 +97,7 @@ public class CGIParser {
 	 * @throws IOException If an input error occurs
 	 * @deprecated This method does not decode URLEncoded values properly.  Please use a method that specifies a character set.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Deprecated public CGIParser(Reader in) throws IOException {
 		if (in == null) return;
@@ -129,7 +131,7 @@ public class CGIParser {
 	 * @param s CGI Encoded name value pairs.
 	 * @deprecated This method does not decode URLEncoded values properly.  Please use a method that specifies a character set.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Deprecated public CGIParser(String s){
 		if (s == null) return;
@@ -172,7 +174,7 @@ public class CGIParser {
 	 * @param lex Lexer that will return the tokens.
 	 * @throws IOException If an input error occurs
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private void parse(CGILexer lex, String charset) throws IOException, UnsupportedEncodingException {
 		String nameValue, name, value;
@@ -219,7 +221,7 @@ public class CGIParser {
 	 * @param name a String containing the name of the parameter whose value is requested
 	 * @return an array of String objects containing the parameter's values
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String[] getParameterValues(String name){
 		ArrayList<String> values = nameValuePairHash.get(name);
@@ -367,7 +369,7 @@ public class CGIParser {
 	 * @param name a String specifying the name of the parameter
 	 * @return a String representing the single value of the parameter
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String getParameter(String name){
 		ArrayList<String> values = nameValuePairHash.get(name);
@@ -386,7 +388,7 @@ public class CGIParser {
 	 *     of a request parameter; or an empty Enumeration if the request has
 	 *     no parameters
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public Enumeration<String> getParameterNames(){
 		return new IteratorEnumeration<String>(nameValuePairHash.keySet().iterator());
@@ -425,7 +427,7 @@ public class CGIParser {
 	 * @return URLEncoded name value pairs.
 	 * @throws  UnsupportedEncodingException If the named encoding is not supported.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String toString(String enc) throws UnsupportedEncodingException {
 		StringBuffer sb = new StringBuffer();

@@ -19,6 +19,8 @@
 package com._64bitlabs.util;
 
 import com._64bitlabs.util.string.StringHelper;
+import gnu.trove.map.hash.THashMap;
+import gnu.trove.set.hash.THashSet;
 
 import java.io.*;
 import java.util.*;
@@ -106,7 +108,7 @@ import java.util.*;
  * </blockquote>
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class UberProperties {
 
@@ -115,22 +117,22 @@ public class UberProperties {
 	 * This should never be null, but may be empty.
 	 * This should hold objects of type Property.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
-	private HashMap<String,Property> properties = new HashMap<String,Property>();
+	private THashMap<String,Property> properties = new THashMap<>();
 
 	/**
 	 * Comment for this set of properties.
 	 * This may be either null or empty.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private String comment = null;
 
 	/**
 	 * The object type that goes in the HashMap.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private class Property {
 
@@ -138,7 +140,7 @@ public class UberProperties {
 		 * List of values for this property.
 		 * This should never be null or empty.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		private ArrayList<String> list;
 
@@ -146,7 +148,7 @@ public class UberProperties {
 		 * Comment for this set of properties.
 		 * This may be either null or empty.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		private String comment = null;
 
@@ -155,7 +157,7 @@ public class UberProperties {
 		 *
 		 * @param comment the comment for this property, or null to clear.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		public void setComment(String comment){
 			this.comment = comment;
@@ -166,7 +168,7 @@ public class UberProperties {
 		 *
 		 * @return comment for this property, or null if none is set.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		public String getComment(){
 			return this.comment;
@@ -177,7 +179,7 @@ public class UberProperties {
 		 *
 		 * @param value initial value for this property.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		public Property(String value){
 			list = new ArrayList<String>(1);
@@ -189,7 +191,7 @@ public class UberProperties {
 		 *
 		 * @param values initial values for this property.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		public Property(String[] values){
 			list = new ArrayList<String>(values.length);
@@ -201,7 +203,7 @@ public class UberProperties {
 		 *
 		 * @param value lone value for this property.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		public void set(String value){
 			list.clear();
@@ -213,7 +215,7 @@ public class UberProperties {
 		 *
 		 * @param values lone values for this property.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		public void set(String[] values){
 			list.clear();
@@ -225,7 +227,7 @@ public class UberProperties {
 		 *
 		 * @param value another value for this property.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		public void add(String value){
 			list.add(value);
@@ -236,7 +238,7 @@ public class UberProperties {
 		 *
 		 * @param values other values for this property.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		public void add(String[] values){
 			list.ensureCapacity(list.size() + values.length);
@@ -250,7 +252,7 @@ public class UberProperties {
 		 *
 		 * @return the last value.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		public String getValue(){
 			return list.get(list.size() - 1);
@@ -261,7 +263,7 @@ public class UberProperties {
 		 *
 		 * @return a list of all the values.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		public String[] getValues(){
 			return list.toArray(new String[list.size()]);
@@ -271,7 +273,7 @@ public class UberProperties {
 	/**
 	 * Creates an empty property list with no default values.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public UberProperties(){
 		// Create empty properties
@@ -283,7 +285,7 @@ public class UberProperties {
 	 * @param defaults the defaults.
 	 * @throws NullPointerException if defaults is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public UberProperties(UberProperties defaults){
 		merge(defaults);
@@ -294,7 +296,7 @@ public class UberProperties {
 	 * Calling this from a constructor will clone (deep)
 	 * the default properties.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private void merge(UberProperties defaults){
 		setComment(defaults.getComment());
@@ -312,7 +314,7 @@ public class UberProperties {
 	 * @return true if the property existed and was removed, false if it did not exist.
 	 * @throws NullPointerException if name is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public boolean contains(String name){
 		if (name == null) throw new NullPointerException();
@@ -326,7 +328,7 @@ public class UberProperties {
 	 * @return true if the property existed and was removed, false if it did not exist.
 	 * @throws NullPointerException if name is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public boolean remove(String name){
 		if (!contains(name)) return false;
@@ -342,7 +344,7 @@ public class UberProperties {
 	 * @param value the value of the property, or null to remove it.
 	 * @throws NullPointerException if name is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setProperty(String name, String value){
 		if (name == null) throw new NullPointerException();
@@ -370,7 +372,7 @@ public class UberProperties {
 	 * @throws NullPointerException if values is null.
 	 * @throws IllegalArgumentException if values is empty.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setProperties(String name, String[] values){
 		if (name == null) throw new NullPointerException();
@@ -395,7 +397,7 @@ public class UberProperties {
 	 * @throws NullPointerException if name is null.
 	 * @throws NullPointerException if comment is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setProperty(String name, String value, String comment){
 		if (name == null) throw new NullPointerException();
@@ -418,7 +420,7 @@ public class UberProperties {
 	 * @throws NullPointerException if values is null.
 	 * @throws IllegalArgumentException if values is empty.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setProperties(String name, String[] values, String comment){
 		if (name == null) throw new NullPointerException();
@@ -437,7 +439,7 @@ public class UberProperties {
 	 * @throws NullPointerException if name is null.
 	 * @throws IllegalArgumentException if name is not a known key.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private void setComment(String name, String comment){
 		if (name == null) throw new NullPointerException();
@@ -455,7 +457,7 @@ public class UberProperties {
 	 * @throws NullPointerException if name is null.
 	 * @throws NullPointerException if value is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void addProperty(String name, String value, String comment){
 		if (name == null) throw new NullPointerException();
@@ -474,7 +476,7 @@ public class UberProperties {
 	 * @throws NullPointerException if name is null.
 	 * @throws NullPointerException if values is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void addProperties(String name, String[] values, String comment){
 		if (name == null) throw new NullPointerException();
@@ -492,7 +494,7 @@ public class UberProperties {
 	 * @throws NullPointerException if name is null.
 	 * @throws NullPointerException if value is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void addProperty(String name, String value){
 		if (name == null) throw new NullPointerException();
@@ -516,7 +518,7 @@ public class UberProperties {
 	 * @throws NullPointerException if name is null.
 	 * @throws NullPointerException if values is null.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void addProperties(String name, String[] values){
 		if (name == null) throw new NullPointerException();
@@ -630,7 +632,7 @@ public class UberProperties {
 	 * @throws NullPointerException if userFile is null.
 	 * @throws IllegalArgumentException if userFile is empty.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void load(String[] userFile, String systemResource) throws IOException {
 		int length = userFile.length;
@@ -655,7 +657,7 @@ public class UberProperties {
 	 * @param add whether parameters should add to parameters with the same name or replace them.
 	 * @throws IOException if an error occurs when reading.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void load(InputStream in, boolean add) throws IOException {
 		load(new InputStreamReader(in, "ISO-8859-1"), add);
@@ -674,7 +676,7 @@ public class UberProperties {
 	public void load(Reader reader, boolean add) throws IOException {
 		PropertiesLexer lex = new PropertiesLexer(reader);
 		PropertiesToken t;
-		HashSet<String> names = new HashSet<String>();
+		THashSet<String> names = new THashSet<>();
 		StringBuffer comment = new StringBuffer();
 		boolean foundComment = false;
 		StringBuffer name = new StringBuffer();
@@ -744,7 +746,7 @@ public class UberProperties {
 	 * @param in InputStream containing properties.
 	 * @throws IOException if an error occurs when reading.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void load(InputStream in) throws IOException {
 		load(in, false);
@@ -761,7 +763,7 @@ public class UberProperties {
 	 * @param in Reader containing properties.
 	 * @throws IOException if an error occurs when reading.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void load(Reader in) throws IOException {
 		load(in, false);
@@ -783,7 +785,7 @@ public class UberProperties {
 	 * @throws NullPointerException if userFile is null.
 	 * @throws IllegalArgumentException if userFile is empty.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void save(String[] userFile) throws IOException {
 		int length = userFile.length;
@@ -835,7 +837,7 @@ public class UberProperties {
 	 * @param out OutputStream to which these properties should be written.
 	 * @throws IOException if an error occurs when writing.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void save(OutputStream out) throws IOException {
 		writeComment(out, comment);
@@ -1029,7 +1031,7 @@ public class UberProperties {
 	 * @param name Parameter name
 	 * @return the first value of this property, or null if the property does not exist.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String getProperty(String name){
 		String value = null;
@@ -1050,7 +1052,7 @@ public class UberProperties {
 	 * @param defaultValue Value to use when property not present
 	 * @return the first value of this property.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String getProperty(String name, String defaultValue){
 		String value = getProperty(name);
@@ -1070,7 +1072,7 @@ public class UberProperties {
 	 * @param name Parameter name
 	 * @return all the values associated with the given key, or null if the property does not exist.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String[] getProperties(String name){
 		String[] values = null;
@@ -1108,7 +1110,7 @@ public class UberProperties {
 	 * @param defaultValues Values to use when property not present
 	 * @return all the values associated with the given key, or null if the property does not exist.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String[] getProperties(String name, String[] defaultValues){
 		String[] values = getProperties(name);
@@ -1126,7 +1128,7 @@ public class UberProperties {
 	 * @param name Parameter name
 	 * @return the comment for this property, or null if there is no comment or the property does not exist.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String getComment(String name){
 		String comment = null;
@@ -1143,7 +1145,7 @@ public class UberProperties {
 	 *
 	 * @return an enumeration of all the keys in this property list, including the keys in the default property list.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String[] propertyNames(){
 		Set<String> names = properties.keySet();
@@ -1155,7 +1157,7 @@ public class UberProperties {
 	 *
 	 * @param comment the comment for entire set of properties, or null to clear.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setComment(String comment){
 		this.comment = comment;
@@ -1166,7 +1168,7 @@ public class UberProperties {
 	 *
 	 * @return comment for entire set of properties, or null if there is no comment.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String getComment(){
 		return this.comment;
@@ -1178,7 +1180,7 @@ public class UberProperties {
 	 *
 	 * @return number of names.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int getPropertyNameCount(){
 		return properties.keySet().size();

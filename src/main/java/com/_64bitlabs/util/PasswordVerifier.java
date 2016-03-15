@@ -22,7 +22,7 @@ package com._64bitlabs.util;
  * Interface to verify passwords.
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public interface PasswordVerifier {
 	/**
@@ -34,7 +34,7 @@ public interface PasswordVerifier {
 	 * @param password an array of characters representing a password.
 	 * @return true iff this password is OK.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public boolean verify(char[] password);
 

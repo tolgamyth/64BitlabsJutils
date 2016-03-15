@@ -36,21 +36,21 @@ import java.util.Locale;
  * "http://64bitlabs.com/utils/LineEnds.html">64bitlabs.com</a>.
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class LineEnds {
 
 	/**
 	 * Version number of this program
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static final String version = "1.2";
 
 	/**
 	 * Locale specific strings displayed to the user.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected static ResourceBundle labels = ResourceBundle.getBundle("LineEnds",  Locale.getDefault());
 
@@ -100,7 +100,7 @@ public class LineEnds {
 	 *
 	 * @param args Command line arguments.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void main(String[] args){
 
@@ -232,62 +232,62 @@ public class LineEnds {
 	 * The system line ending as determined
 	 * by System.getProperty("line.separator")
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public final static int STYLE_SYSTEM = 0;
 	/**
 	 * The Windows and DOS line ending ("\r\n")
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public final static int STYLE_WINDOWS = 1;
 	/**
 	 * The Windows and DOS line ending ("\r\n")
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public final static int STYLE_DOS = 1;
 	/**
 	 * The Windows and DOS line ending ("\r\n")
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public final static int STYLE_RN = 1;
 	/**
 	 * The UNIX and Java line ending ("\n")
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public final static int STYLE_UNIX = 2;
 	/**
 	 * The UNIX and Java line ending ("\n")
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public final static int STYLE_N = 2;
 	/**
 	 * The UNIX and Java line ending ("\n")
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public final static int STYLE_JAVA = 2;
 	/**
 	 * The Macintosh line ending ("\r")
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public final static int STYLE_MAC = 3;
 	/**
 	 * The Macintosh line ending ("\r")
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public final static int STYLE_R = 3;
 
 	/**
 	 * Buffer size when reading from input stream.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private final static int BUFFER_SIZE = 1024;
 	private final static int STATE_INIT = 0;
@@ -309,7 +309,7 @@ public class LineEnds {
 	 * @throws com._64bitlabs.util.exception.BinaryDataException if non-text data is encountered.
 	 * @throws IOException if an input or output error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static boolean convert(InputStream in, OutputStream out) throws IOException {
 		return convert(in, out, STYLE_SYSTEM, true);
@@ -327,7 +327,7 @@ public class LineEnds {
 	 * @throws IOException if an input or output error occurs.
 	 * @throws IllegalArgumentException if an unknown style is requested.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static boolean convert(InputStream in, OutputStream out, int style) throws IOException {
 		return convert(in, out, style, true);
@@ -346,7 +346,7 @@ public class LineEnds {
 	 * @throws com._64bitlabs.util.exception.BinaryDataException if non-text data is encountered.
 	 * @throws IOException if an input or output error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static boolean convert(InputStream in, OutputStream out, boolean binaryException) throws IOException {
 		return convert(in, out, STYLE_SYSTEM, binaryException);
@@ -365,7 +365,7 @@ public class LineEnds {
 	 * @throws IOException if an input or output error occurs.
 	 * @throws IllegalArgumentException if an unknown style is requested.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static boolean convert(InputStream in, OutputStream out, int style, boolean binaryException) throws IOException {
 		byte[] lineEnding;
@@ -443,7 +443,7 @@ public class LineEnds {
 	 * @throws BinaryDataException if non-text data is encountered.
 	 * @throws IOException if an input or output error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static boolean convert(File f) throws IOException {
 		return convert(f, STYLE_SYSTEM, true);
@@ -459,7 +459,7 @@ public class LineEnds {
 	 * @throws IOException if an input or output error occurs.
 	 * @throws IllegalArgumentException if an unknown style is requested.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static boolean convert(File f, int style) throws IOException {
 		return convert(f, style, true);
@@ -476,7 +476,7 @@ public class LineEnds {
 	 * @throws BinaryDataException if non-text data is encountered.
 	 * @throws IOException if an input or output error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static boolean convert(File f, boolean binaryException) throws IOException {
 		return convert(f, STYLE_SYSTEM, binaryException);
@@ -493,7 +493,7 @@ public class LineEnds {
 	 * @throws IOException if an input or output error occurs.
 	 * @throws IllegalArgumentException if an unknown style is requested.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static boolean convert(File f, int style, boolean binaryException) throws IOException {
 		File temp = null;

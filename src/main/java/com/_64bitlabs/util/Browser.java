@@ -29,25 +29,25 @@ import javax.swing.*;
 
 /**
  * Allows URLs to be opened in the system browser on Windows and Unix.
- * More information about this class is available from <a target="_top" href=
- * "http://64bitlabs.com/utils/Browser.html">64bitlabs.com</a>.
+ * More information about this class is available from
+ * <a target="_top" href="http://64bitlabs.com/utils/Browser.html">64bitlabs.com</a>.
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class Browser {
 
 	/**
 	 * The dialog that allows user configuration of the options for this class.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected static BrowserDialog dialog;
 
 	/**
 	 * Locale specific strings displayed to the user.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected static ResourceBundle labels = ResourceBundle.getBundle("Browser",  Locale.getDefault());
 
@@ -57,7 +57,7 @@ public class Browser {
 	 *
 	 * @param locale Locale used to for i18n.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void setLocale(Locale locale){
 		labels = ResourceBundle.getBundle("Browser",  locale);
@@ -73,7 +73,7 @@ public class Browser {
 	 * These commands are passed in order to exec until something works
 	 * when displayURL is used.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String[] exec = null;
 
@@ -85,7 +85,7 @@ public class Browser {
 	 * test if Mozilla, netscape, and lynx(xterm) are available (in that
 	 * order).
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void init(){
 		exec = defaultCommands();
@@ -95,7 +95,7 @@ public class Browser {
 	 * Retrieve the default commands to open a browser for this system.
 	 * @return list of commands
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String[] defaultCommands(){
 		String[] execLocal = null;
@@ -221,7 +221,7 @@ public class Browser {
 	 *
 	 * @param props properties file to which configuration is saved.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void save(Properties props){
 		boolean saveBrowser = false;
@@ -257,7 +257,7 @@ public class Browser {
 	 *
 	 * @param props properties file from which configuration is loaded.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void load(Properties props){
 		if (props.containsKey("Browser.open")){
@@ -290,7 +290,7 @@ public class Browser {
 	 * @param url the url to display
 	 * @throws IOException if the url is not valid or the browser fails to star
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void displayURL(String url) throws IOException {
 		if (exec == null || exec.length == 0){
@@ -461,7 +461,7 @@ public class Browser {
 	 * @param urls the list of urls to display
 	 * @throws IOException if the url is not valid or the browser fails to star
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void displayURLs(String[] urls) throws IOException {
 		if (urls == null || urls.length == 0){
@@ -516,7 +516,7 @@ public class Browser {
 	 * @param url the url to display in a new window.
 	 * @throws IOException if the url is not valid or the browser fails to star
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void displayURLinNew(String url) throws IOException {
 		displayURLsinNew (new String[] {url});
@@ -539,7 +539,7 @@ public class Browser {
 	 * @param urls the list of urls to display
 	 * @throws IOException if the url is not valid or the browser fails to star
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void displayURLsinNew(String[] urls) throws IOException {
 		if (urls == null || urls.length == 0){
@@ -598,7 +598,7 @@ public class Browser {
 	 * @param namedWindow the name of the desired window.
 	 * @throws IOException if the url is not valid or the browser fails to star
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void displayURL(String url, String namedWindow) throws IOException {
 		displayURLs (new String[] {url}, new String[] {namedWindow});
@@ -620,7 +620,7 @@ public class Browser {
 	 * @param namedWindows the list of names for the windows.
 	 * @throws IOException if the url is not valid or the browser fails to star
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void displayURLs(String[] urls, String[] namedWindows) throws IOException {
 		if (urls == null || urls.length == 0){
@@ -667,7 +667,7 @@ public class Browser {
 	 * @param namedWindow the name of the first window to use.
 	 * @throws IOException if the url is not valid or the browser fails to star
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void displayURLs(String[] urls, String namedWindow) throws IOException {
 		displayURLs(urls, new String[] {namedWindow});
@@ -712,7 +712,7 @@ public class Browser {
 	 * @param owner The frame that owns the dialog.
 	 * @return whether or not the dialog has changed
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static boolean dialogConfiguration(Frame owner){
 		dialogConfiguration(owner, null);
@@ -740,7 +740,7 @@ public class Browser {
 	 * @return whether or not the dialog has changed
 	 * @deprecated  Use the Browser resource bundle to set strings for the given locale.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Deprecated public static boolean dialogConfiguration(Frame owner, Properties props){
 		if (Browser.dialog == null){
@@ -756,42 +756,42 @@ public class Browser {
 	/**
 	 * Where the command lines are typed.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private static JTextArea description;
 
 	/**
 	 * Where the command lines are typed.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private static JTextArea commandLinesArea;
 
 	/**
 	 * The reset button.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private static JButton resetButton;
 
 	/**
 	 * The browse button.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private static JButton browseButton;
 
 	/**
 	 * The label for the field in which the name is typed.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private static JLabel commandLinesLabel;
 
 	/**
 	 * File dialog for choosing a browser
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private static JFileChooser fileChooser;
 
@@ -901,7 +901,7 @@ public class Browser {
 	/**
 	 * A modal dialog that presents configuration option for this class.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private static class BrowserDialog extends JDialog {
 
@@ -913,28 +913,28 @@ public class Browser {
 		/**
 		 * The OK button.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		private JButton okButton;
 
 		/**
 		 * The cancel button.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		private JButton cancelButton;
 
 		/**
 		 * The label for the field in which the name is typed.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		private JLabel commandLinesLabel;
 
 		/**
 		 * update this variable when the user makes an action
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		private boolean pressed_OK = false;
 
@@ -950,7 +950,7 @@ public class Browser {
 		 * com.Ostermiller.util.BrowserDialog.cancel<br>
 		 *
 		 * @deprecated  Use the Browser resource bundle to set strings for the given locale.
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		@Deprecated private void setProps(Properties props){
 			if (props.containsKey("com.Ostermiller.util.BrowserDialog.title")){
@@ -986,7 +986,7 @@ public class Browser {
 		 *
 		 * @return if the user made changes to the browser configuration.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		public boolean changed() {
 			return pressed_OK;
@@ -996,7 +996,7 @@ public class Browser {
 		 * Create this dialog with the given parent and title.
 		 *
 		 * @param parent window from which this dialog is launched
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		public BrowserDialog(Frame parent) {
 			super(parent, labels.getString("dialog.title"), true);
@@ -1007,7 +1007,7 @@ public class Browser {
 		/**
 		 * Called by constructors to initialize the dialog.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		@Override protected void dialogInit(){
 
@@ -1043,7 +1043,7 @@ public class Browser {
 		/**
 		 * Shows the dialog.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 * @deprecated use setVisible(true);
 		 */
 		@Override @Deprecated public void show(){

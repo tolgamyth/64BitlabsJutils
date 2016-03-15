@@ -46,21 +46,21 @@ import java.util.Vector;
  * "http://64bitlabs.com/utils/RandPass.html">64bitlabs.com</a>.
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class PWGenerator {
 
 	/**
 	 * Version number of this program
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static final String version = "1.1";
 
 	/**
 	 * Locale specific strings displayed to the user.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected static ResourceBundle labels = ResourceBundle.getBundle("RandPass",  Locale.getDefault());
 
@@ -68,7 +68,7 @@ public class PWGenerator {
 	/**
 	 * Default length for passwords
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private static final int DEFAULT_PASSWORD_LENGTH = 8;
 
@@ -76,7 +76,7 @@ public class PWGenerator {
 	 * Alphabet consisting of upper and lower case letters A-Z and
 	 * the digits 0-9.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static final char[] NUMBERS_AND_LETTERS_ALPHABET = {
 		'A','B','C','D','E','F','G','H',
@@ -92,7 +92,7 @@ public class PWGenerator {
 	/**
 	 * Alphabet consisting of all the printable ASCII symbols.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static final char[] SYMBOLS_ALPHABET = {
 		'!','\"','#','$','%','&','\'','(',
@@ -104,7 +104,7 @@ public class PWGenerator {
 	/**
 	 * Alphabet consisting of all the printable ASCII characters.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static final char[] PRINTABLE_ALPHABET = {
 		'!','\"','#','$','%','&','\'','(',
@@ -124,7 +124,7 @@ public class PWGenerator {
 	/**
 	 * Alphabet consisting of the lower case letters A-Z.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static final char[] LOWERCASE_LETTERS_ALPHABET = {
 		'a','b','c','d','e','f','g','h',
@@ -137,7 +137,7 @@ public class PWGenerator {
 	 * Alphabet consisting of the lower case letters A-Z and
 	 * the digits 0-9.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static final char[] LOWERCASE_LETTERS_AND_NUMBERS_ALPHABET = {
 		'a','b','c','d','e','f','g','h',
@@ -150,7 +150,7 @@ public class PWGenerator {
 	/**
 	 * Alphabet consisting of upper and lower case letters A-Z.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static final char[] LETTERS_ALPHABET = {
 		'A','B','C','D','E','F','G','H',
@@ -165,7 +165,7 @@ public class PWGenerator {
 	/**
 	 * Alphabet consisting of the upper letters A-Z.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static final char[] UPPERCASE_LETTERS_ALPHABET = {
 		'A','B','C','D','E','F','G','H',
@@ -179,7 +179,7 @@ public class PWGenerator {
 	 * the digits 0-9 but with characters that are often mistaken
 	 * for each other when typed removed. (I,L,O,U,V,i,l,o,u,v,0,1)
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static final char[] NONCONFUSING_ALPHABET = {
 		'A','B','C','D','E','F','G','H',
@@ -194,7 +194,7 @@ public class PWGenerator {
 	/**
 	 * Random number generator used.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected SecureRandom rand;
 
@@ -203,7 +203,7 @@ public class PWGenerator {
 	 * that are allowed in a password.
 	 * Set to -1 to disable this feature.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected int repetition = -1;
 
@@ -214,7 +214,7 @@ public class PWGenerator {
 	 * This value may not be null or have
 	 * no elements.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected char[] alphabet;
 
@@ -226,7 +226,7 @@ public class PWGenerator {
 	 * This value may be null but it must
 	 * have at least one element otherwise.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected char[] firstAlphabet;
 
@@ -238,7 +238,7 @@ public class PWGenerator {
 	 * This value may be null but it must
 	 * have at least one element otherwise.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	protected char[] lastAlphabet;
 
@@ -247,7 +247,7 @@ public class PWGenerator {
 	 * with the default secure random number generator
 	 * and default NONCONFUSING alphabet for all characters.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public PWGenerator(){
 		this(new SecureRandom(), NONCONFUSING_ALPHABET);
@@ -260,7 +260,7 @@ public class PWGenerator {
 	 *
 	 * @param rand Secure random number generator to use when generating passwords.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public PWGenerator(SecureRandom rand){
 		this(rand, NONCONFUSING_ALPHABET);
@@ -273,7 +273,7 @@ public class PWGenerator {
 	 *
 	 * @param alphabet Characters allowed in generated passwords.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public PWGenerator(char[] alphabet){
 		this(new SecureRandom(), alphabet);
@@ -287,7 +287,7 @@ public class PWGenerator {
 	 * @param rand Secure random number generator to use when generating passwords.
 	 * @param alphabet Characters allowed in generated passwords.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public PWGenerator(SecureRandom rand, char[] alphabet){
 		this.rand = rand;
@@ -346,7 +346,7 @@ public class PWGenerator {
 	 * @param args Command line arguments.
 	 * @throws Exception errors
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void main(String[] args) throws Exception {
 		CmdLn commandLine = new CmdLn(
@@ -473,7 +473,7 @@ public class PWGenerator {
 	 * @param alphabet set of letters that must be present
 	 * @param num number of letters from the alphabet that must be present.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void addRequirement(char[] alphabet, int num){
 		if (requirements == null) requirements = new Vector<Requirement>();
@@ -488,7 +488,7 @@ public class PWGenerator {
 	 * @throws NullPointerException if the alphabet is null.
 	 * @throws ArrayIndexOutOfBoundsException if the alphabet has no elements.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setAlphabet(char[] alphabet){
 		if (alphabet == null) throw new NullPointerException("Null alphabet");
@@ -501,7 +501,7 @@ public class PWGenerator {
 	 *
 	 * @param rand Secure random number generator to use when generating passwords.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setRandomGenerator(SecureRandom rand){
 		this.rand = rand;
@@ -516,7 +516,7 @@ public class PWGenerator {
 	 *
 	 * @param alphabet Characters allowed for the first character of the passwords.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setFirstAlphabet(char[] alphabet){
 		if (alphabet == null || alphabet.length == 0){
@@ -535,7 +535,7 @@ public class PWGenerator {
 	 *
 	 * @param alphabet Characters allowed for the last character of the passwords.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setLastAlphabet(char[] alphabet){
 		if (alphabet == null || alphabet.length == 0){
@@ -561,7 +561,7 @@ public class PWGenerator {
 	 *
 	 * @param rep Maximum character repetition.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setMaxRepetition(int rep){
 		this.repetition = rep - 1;
@@ -581,7 +581,7 @@ public class PWGenerator {
 	 * @param pass buffer that will hold the password.
 	 * @return the buffer, filled with random characters.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public char[] getPassChars(char[] pass){
 		boolean verified = false;
@@ -614,7 +614,7 @@ public class PWGenerator {
 	 *
 	 * @param verifier class that performs verification of password.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void addVerifier(PasswordVerifier verifier){
 		if (verifiers == null) verifiers = new Vector<PasswordVerifier>();
@@ -692,7 +692,7 @@ public class PWGenerator {
 	 * Avoid repetition (if possible) by moving all characters that would cause repetition to
 	 * the end of the alphabet and returning the size of the alphabet that may be used.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private static int avoidRepetition(char[] alph, char[] pass, int passSize, int repetition, int alphSize){
 		if (repetition > -1){
@@ -715,7 +715,7 @@ public class PWGenerator {
 	 * Find a repetition of the desired length.  The characters to search
 	 * for are located at pass[end-length] to pass[end]
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private static int findRep(char[] pass, int start, int end, int length){
 		for (int i=start; i<end-length; i++){
@@ -732,7 +732,7 @@ public class PWGenerator {
 	 * move all of the given character to the end of the array
 	 * and return the number of characters moved.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private static int moveto(char[] alph, int numGood, char c){
 		int count = 0;
@@ -758,7 +758,7 @@ public class PWGenerator {
 	 * @param length The desired length of the generated password.
 	 * @return a random password
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public char[] getPassChars(int length){
 		return(getPassChars(new char[length]));
@@ -773,7 +773,7 @@ public class PWGenerator {
 	 *
 	 * @return a random password
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public char[] getPassChars(){
 		return(getPassChars(DEFAULT_PASSWORD_LENGTH));
@@ -791,7 +791,7 @@ public class PWGenerator {
 	 * @return a random password
 	 *
 	 * @see #getPassChars(int)
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String getPass(int length){
 		return(new String(getPassChars(new char[length])));
@@ -808,7 +808,7 @@ public class PWGenerator {
 	 * @return a random password
 	 *
 	 * @see #getPassChars()
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String getPass(){
 		return(getPass(DEFAULT_PASSWORD_LENGTH));

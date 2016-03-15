@@ -50,14 +50,14 @@ import java.io.*;
  *
  * @author Santeri Paavolainen http://santtu.iki.fi/md5/
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 public class MD5 {
 
 	/**
 	 * Class constructor
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public MD5 () {
 		reset();
@@ -69,7 +69,7 @@ public class MD5 {
 	 *
 	 * @param args command line arguments
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void main (String[] args){
 		if (args.length == 0){
@@ -90,7 +90,7 @@ public class MD5 {
 	 *
 	 * @return Array of 16 bytes, the hash of all updated bytes.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public byte[] getHash() {
 		if (!finalState.valid) {
@@ -115,7 +115,7 @@ public class MD5 {
 	 *
 	 * @return String representation of this object's hash.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public String getHashString(){
 		return toHex(this.getHash());
@@ -127,7 +127,7 @@ public class MD5 {
 	 * @param b byte array for which an MD5 hash is desired.
 	 * @return Array of 16 bytes, the hash of all updated bytes.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static byte[] getHash(byte[] b){
 		MD5 md5 = new MD5();
@@ -141,7 +141,7 @@ public class MD5 {
 	 * @param b byte array for which an MD5 hash is desired.
 	 * @return 32-character hex representation the data's MD5 hash.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String getHashString(byte[] b){
 		MD5 md5 = new MD5();
@@ -156,7 +156,7 @@ public class MD5 {
 	 * @return Array of 16 bytes, the hash of all updated bytes.
 	 * @throws IOException if an I/O error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static byte[] getHash(InputStream in) throws IOException {
 		MD5 md5 = new MD5();
@@ -175,7 +175,7 @@ public class MD5 {
 	 * @return 32-character hex representation the data's MD5 hash.
 	 * @throws IOException if an I/O error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String getHashString(InputStream in) throws IOException {
 		MD5 md5 = new MD5();
@@ -194,7 +194,7 @@ public class MD5 {
 	 * @return Array of 16 bytes, the hash of all updated bytes.
 	 * @throws IOException if an I/O error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static byte[] getHash(File f) throws IOException {
 		InputStream is = new FileInputStream(f);
@@ -210,7 +210,7 @@ public class MD5 {
 	 * @return 32-character hex representation the data's MD5 hash.
 	 * @throws IOException if an I/O error occurs.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String getHashString(File f) throws IOException {
 		InputStream is = new FileInputStream(f);
@@ -227,7 +227,7 @@ public class MD5 {
 	 * @param s String for which an MD5 hash is desired.
 	 * @return Array of 16 bytes, the hash of all updated bytes.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static byte[] getHash(String s){
 		MD5 md5 = new MD5();
@@ -243,7 +243,7 @@ public class MD5 {
 	 * @param s String for which an MD5 hash is desired.
 	 * @return 32-character hex representation the data's MD5 hash.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String getHashString(String s){
 		MD5 md5 = new MD5();
@@ -260,7 +260,7 @@ public class MD5 {
 	 * @return Array of 16 bytes, the hash of all updated bytes.
 	 * @throws UnsupportedEncodingException If the named encoding is not supported.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static byte[] getHash(String s, String enc) throws UnsupportedEncodingException {
 		MD5 md5 = new MD5();
@@ -276,7 +276,7 @@ public class MD5 {
 	 * @return 32-character hex representation the data's MD5 hash.
 	 * @throws UnsupportedEncodingException If the named encoding is not supported.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static String getHashString(String s, String enc) throws UnsupportedEncodingException {
 		MD5 md5 = new MD5();
@@ -288,7 +288,7 @@ public class MD5 {
 	/**
 	 * Reset the MD5 sum to its initial state.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void reset() {
 		workingState.reset();
@@ -300,7 +300,7 @@ public class MD5 {
 	 *
 	 * @return String representation of this object's hash.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	@Override public String toString(){
 		return getHashString();
@@ -321,7 +321,7 @@ public class MD5 {
 	 * @param offset Offset to buffer array.
 	 * @param length number of bytes to hash.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private void update (MD5State state, byte buffer[], int offset, int length) {
 
@@ -370,7 +370,7 @@ public class MD5 {
 	 * @param offset Offset to buffer array.
 	 * @param length number of bytes to hash.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void update (byte buffer[], int offset, int length) {
 		update(workingState, buffer, offset, length);
@@ -385,7 +385,7 @@ public class MD5 {
 	 * @param buffer Array of bytes to be hashed.
 	 * @param length number of bytes to hash.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void update (byte buffer[], int length) {
 		update(buffer, 0, length);
@@ -396,7 +396,7 @@ public class MD5 {
 	 *
 	 * @param buffer Array of bytes to be hashed.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void update (byte buffer[]) {
 		update(buffer, 0, buffer.length);
@@ -407,7 +407,7 @@ public class MD5 {
 	 *
 	 * @param b byte to be hashed.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void update (byte b) {
 		byte buffer[] = new byte[1];
@@ -422,7 +422,7 @@ public class MD5 {
 	 *
 	 * @param s String to be hashed.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void update (String s) {
 		update(s.getBytes());
@@ -435,7 +435,7 @@ public class MD5 {
 	 * @param enc The name of a supported character encoding.
 	 * @throws UnsupportedEncodingException If the named encoding is not supported.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void update (String s, String enc) throws UnsupportedEncodingException {
 		update(s.getBytes(enc));
@@ -445,7 +445,7 @@ public class MD5 {
 	 * The current state from which the hash sum
 	 * can be computed or updated.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private MD5State workingState = new MD5State();
 
@@ -454,14 +454,14 @@ public class MD5 {
 	 * the hash is requested and it is invalidated when the hash
 	 * is updated.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private MD5State finalState = new MD5State();
 
 	/**
 	 * Temporary buffer cached here for performance reasons.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private int[] decodeBuffer = new int[16];
 
@@ -469,7 +469,7 @@ public class MD5 {
 	 * 64 bytes of padding that can be added if the length
 	 * is not divisible by 64.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private static final byte padding[] = {
 		(byte) 0x80, 0, 0, 0, 0, 0, 0, 0,
@@ -486,21 +486,21 @@ public class MD5 {
 	 * Contains internal state of the MD5 class.
 	 * Passes MD5 test suite as defined in RFC1321.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private class MD5State {
 
 		/**
 		 * True if this state is valid.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		private boolean valid = true;
 
 		/**
 		 * Reset to initial state.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		private void reset(){
 			state[0] = 0x67452301;
@@ -514,21 +514,21 @@ public class MD5 {
 		/**
 		 * 128-byte state
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		private int state[] = new int[4];
 
 		/**
 		 * 64-bit count of the number of bits that have been hashed.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		private long bitCount;
 
 		/**
 		 * 64-byte buffer (512 bits) for storing to-be-hashed characters
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		private byte buffer[] = new byte[64];
 
@@ -541,7 +541,7 @@ public class MD5 {
 		 *
 		 * @param from state to copy from.
 		 *
-		 * @since 64bitlabsutils 1.00.00
+		 * @since 64bitlabsutils 1.0.0
 		 */
 		private void copy(MD5State from) {
 			System.arraycopy(from.buffer, 0, this.buffer, 0, this.buffer.length);
@@ -559,7 +559,7 @@ public class MD5 {
 	 * @param hash Array of bytes to convert to hex-string
 	 * @return  Generated hex string
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private static String toHex(byte hash[]){
 		StringBuffer buf = new StringBuffer(hash.length * 2);

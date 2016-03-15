@@ -78,7 +78,7 @@ import java.io.*;
  * of them.</li></ul>
  *
  * @author Tolga Yilmaz info@64bitlabs.com
- * @since 64bitlabsutils 1.00.00
+ * @since 64bitlabsutils 1.0.0
  */
 
 
@@ -327,7 +327,7 @@ class ExcelCSVLexer {
 	 *
 	 * @param args program arguments, of which the first is a filename
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public static void main(String[] args) {
 		InputStream in;
@@ -363,7 +363,7 @@ class ExcelCSVLexer {
 	 * a pointer to a static variable).  If it is a pointer to a static
 	 * variable, it will be cloned.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private void ensureCharacterMapIsInstance(){
 		if (ZZ_CMAP == zzcmap_instance){
@@ -378,7 +378,7 @@ class ExcelCSVLexer {
 	 * to be a delimiter so that the parsing doesn't break.  Examples of bad
 	 * characters are quotes, commas, and whitespace.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private boolean charIsSafe(char c){
 		// There are two character classes that one could use as a delimiter.
@@ -392,10 +392,10 @@ class ExcelCSVLexer {
 	 * will make the state machine behave as if the characters were switched
 	 * when they are encountered in the input.
 	 *
-	 * @param old the old character, its value will be returned to initial
-	 * @param two second character
+	 * @param oldChar the old character, its value will be returned to initial
+	 * @param newChar second character
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	private void updateCharacterClasses(char oldChar, char newChar){
 		// before modifying the character map, make sure it isn't static.
@@ -427,7 +427,7 @@ class ExcelCSVLexer {
 	 * @param newDelim delimiter to which to switch.
 	 * @throws com._64bitlabs.util.exception.BadDelimiterException if the character cannot be used as a delimiter.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void changeDelimiter(char newDelim) throws BadDelimiterException {
 		if (newDelim == delimiter) return; // no need to do anything.
@@ -448,7 +448,7 @@ class ExcelCSVLexer {
 	 * @param newQuote character to use for quoting.
 	 * @throws com._64bitlabs.util.exception.BadQuoteException if the character cannot be used as a quote.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void changeQuote(char newQuote) throws BadQuoteException {
 		if (newQuote == quote) return; // no need to do anything.
@@ -492,7 +492,7 @@ class ExcelCSVLexer {
 	 *
 	 * @param commentDelims list of characters a comment line may start with.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public void setCommentStart(String commentDelims){
 		this.commentDelims = commentDelims;
@@ -511,7 +511,7 @@ class ExcelCSVLexer {
 	 *
 	 * @return line number of the last token.
 	 *
-	 * @since 64bitlabsutils 1.00.00
+	 * @since 64bitlabsutils 1.0.0
 	 */
 	public int getLineNumber(){
 		return lines;
