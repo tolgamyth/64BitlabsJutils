@@ -25,6 +25,20 @@ import java.util.*;
  * Runs multiple jobs in parallel, n threads at a time, and waits
  * until all threads are complete before continuing.
  * <p>
+ * The Parallelizer class is a Java thread utility that allows one to easily
+ * convert their serial code to parallel code. The class would typically be used to
+ * execute each iteration of a loop at once rather than one after another.
+ * Good candidates for such an optimization would be when the order of execution does not
+ * matter and each iteration does slow operations such as sleeping or making network connections.
+ *
+ * To use the Parallelizer, a developer would typically:
+ * - Create a new Parallelizer before the loop.
+ * - Put the contents of the loop inside an in-line Runnable instance.
+ * - Copy all loop variables used inside the Runnable instance into finals
+ * - Call join() after the loop to wait until the threads are done and it is safe to proceed/li
+ * </p>
+ *
+ * <p>
  * Typically, Parallelizer would be used to run each of the items-
  * in a for loop at the same time.  For example the following for
  * loop:
@@ -48,10 +62,14 @@ import java.util.*;
  * parallelizer.join();
  * System.out.println("done");
  *
- * More information about this class is available from <a target="_top" href=
- * "http://64bitlabs.com/utils/Parallelizer.html">64bitlabs.com</a>.
+ * Example:
+ * Parallelizer pll = new Parallelizer();
+ * for (int i=0; i<10; i++){
+ * 		final int j = i;
+ * 		pll.run( new Runnable(){ System.out.println("Hello World " + j); } );
+ * }
+ * pll.join();
  *
- * @author Matt Conway - http://simplygenius.com/
  * @author Tolga Yilmaz - info@64bitlabs.com
  * @since 64bitlabsutils 1.05.00
  */
@@ -289,7 +307,7 @@ public class Parallelizer
 	/**
 	 * A queue of exceptions that running threads have thrown.
 	 */
-	private LinkedList<RuntimeException> exceptionList = new LinkedList<RuntimeException>();
+	private LinkedList<RuntimeException> exceptionList = new LinkedList<>();
 
 	/**
 	 * Remove the first exception from the exception list and throw it.
@@ -307,7 +325,7 @@ public class Parallelizer
 	/**
 	 * A queue of exceptions that running threads have thrown.
 	 */
-	private LinkedList<Error> errorList = new LinkedList<Error>();
+	private LinkedList<Error> errorList = new LinkedList<>();
 
 	/**
 	 * Remove the first error from the error list and throw it.

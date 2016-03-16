@@ -1,3 +1,20 @@
+/*
+ * Copyright (C) 2014-2016 Tolga Yilmaz
+ * info@64bitlabs.com
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * See LICENSE.txt for details.
+ */
+
 package com._64bitlabs.util.regex;
 
 import junit.framework.TestCase;
@@ -7,7 +24,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by tolga on 20.02.2015.
+ * Created by Tolga Yilmaz on 20.02.2015.
  */
 public class RegExpBuilderTest extends TestCase {
 

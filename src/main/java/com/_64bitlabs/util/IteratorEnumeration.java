@@ -1,9 +1,7 @@
 /*
  * Converts an iterator to an enumerator.
- * Copyright (C) 2004-2010 Tolga Yilmaz
+ * Copyright (C) 2014-2016 Tolga Yilmaz
  * info@64bitlabs.com
- * Copyright (C) 2006 Jonathan Faivre-Vuillin
- * public dot lp at free dot fr
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,8 +23,7 @@ import java.util.*;
 /**
  * Converts an iterator to an enumerator.
  * <p>
- * More information about this class is available from <a target="_top" href=
- * "http://64bitlabs.com/utils/Iterator_Enumeration.html">64bitlabs.com</a>.
+ * Enumeration e = new IteratorEnumeration(collection.iterator());
  *
  * @author Tolga Yilmaz info@64bitlabs.com
  * @param <ElementType> Type of element being enumerated

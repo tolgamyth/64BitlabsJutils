@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2010 Tolga Yilmaz
+ * Copyright (C) 2014-2016 Tolga Yilmaz
  * info@64bitlabs.com
  *
  * This program is free software; you can redistribute it and/or modify
@@ -24,8 +24,6 @@ import java.util.*;
 
 /**
  * Read files in comma separated value format.
- * More information about this class is available from <a target="_top" href=
- * "http://64bitlabs.com/utils/CSV.html">64bitlabs.com</a>.
  *
  * CSV is a file format used as a portable representation of a database.
  * Each line is one entry or record and the fields in a record are separated by commas.

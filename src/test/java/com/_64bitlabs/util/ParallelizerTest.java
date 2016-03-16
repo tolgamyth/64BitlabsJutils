@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2005-2010 Tolga Yilmaz
+ * Copyright (C) 2014-2016 Tolga Yilmaz
  * info@64bitlabs.com
  *
  * This program is free software; you can redistribute it and/or modify
@@ -21,8 +21,6 @@ import java.util.*;
 
 /**
  * Regression test for Parallelizer.
- * More information about this class is available from <a target="_top" href=
- * "http://64bitlabs.com/utils/Parallelizer.html">64bitlabs.com</a>.
  *
  * @author Tolga Yilmaz info@64bitlabs.com
  * @since 64bitlabsutils 1.04.00
@@ -35,11 +33,11 @@ public class ParallelizerTest extends TestCase {
 
 
 	public void testSuccessfulRun() throws InterruptedException {
-		for (int j=0; j<NUMBER_OF_RUNS; j++){
+		for (int j = 0; j < NUMBER_OF_RUNS; j++){
 			final Date[] results = new Date[THREADS_PER_RUN];
 			final Random random = new Random();
 			Parallelizer pll = new Parallelizer(SIMULTANEOUS_THREADS);
-			for(int i=0; i<THREADS_PER_RUN; i++){
+			for(int i=0; i < THREADS_PER_RUN; i++){
 				final int threadNum = i;
 				pll.run(
 					new Runnable(){

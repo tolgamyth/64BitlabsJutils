@@ -1,6 +1,6 @@
 /*
  * Control a web browser from your java application.
- * Copyright (C) 2001-2010 Tolga Yilmaz
+ * Copyright (C) 2014-2016 Tolga Yilmaz
  * info@64bitlabs.com
  * Copyright (C) 2005 Johann N. Loefflmann <jonelo@jonelo.de>
  *

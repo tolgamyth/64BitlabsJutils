@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2010 Tolga Yilmaz
+ * Copyright (C) 2014-2016 Tolga Yilmaz
  * info@64bitlabs.com This program is
  * free software; you can redistribute it and/or modify it under the terms of
  * the GNU General Public License as published by the Free Software Foundation;

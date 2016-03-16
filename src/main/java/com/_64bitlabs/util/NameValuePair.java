@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2010 Tolga Yilmaz
+ * Copyright (C) 2014-2016 Tolga Yilmaz
  * info@64bitlabs.com
  *
  * This program is free software; you can redistribute it and/or modify
@@ -22,9 +22,6 @@ import java.net.URLEncoder;
 
 /**
  * Represents a name value pair as would be used as a CGI parameter.
- * <p>
- * More information about this class is available from <a target="_top" href=
- * "http://64bitlabs.com/utils/">64bitlabs.com</a>.
  *
  * @author Tolga Yilmaz info@64bitlabs.com
  * @since 64bitlabsutils 1.03.00

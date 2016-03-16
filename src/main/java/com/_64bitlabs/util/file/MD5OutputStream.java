@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 1996 Santeri Paavolainen, Helsinki Finland
  *
- * Copyright (C) 2002-2010 Tolga Yilmaz
+ * Copyright (C) 2014-2016 Tolga Yilmaz
  * info@64bitlabs.com
  *
  * This program is free software; you can redistribute it and/or modify

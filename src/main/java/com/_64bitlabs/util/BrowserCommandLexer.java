@@ -12,7 +12,7 @@
 
 /*
  * Tokenize a command line into application and arguments.
- * Copyright (C) 2001-2010 Tolga Yilmaz
+ * Copyright (C) 2014-2016 Tolga Yilmaz
  * info@64bitlabs.com
  *
  * This program is free software; you can redistribute it and/or modify

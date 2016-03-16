@@ -1,6 +1,6 @@
 /*
  * Write files in comma separated value format.
- * Copyright (C) 2002-2010 Tolga Yilmaz
+ * Copyright (C) 2014-2016 Tolga Yilmaz
  * info@64bitlabs.com
  * Copyright (C) 2003 Pierre Dittgen <pierre dot dittgen at pass-tech dot fr>
  *
