@@ -478,111 +478,90 @@ public class DateTimeParseTest extends TestCase {
 		DateTimeParse p = getParser(new DateTimeParse.Field[]{DateTimeParse.Field.MONTH});
 		List<DateTimeParse.Field> fields = p.getFieldOrder();
 		assertEquals(3, fields.size());
-		Assert.assertEquals(DateTimeParse.Field.MONTH, fields.get(0));
-		Assert.assertEquals(DateTimeParse.Field.YEAR, fields.get(1));
-		Assert.assertEquals(DateTimeParse.Field.DAY, fields.get(2));
+		assertEquals(DateTimeParse.Field.MONTH, fields.get(0));
+		assertEquals(DateTimeParse.Field.YEAR, fields.get(1));
+		assertEquals(DateTimeParse.Field.DAY, fields.get(2));
 	}
 
 	public void testFieldOrderDay(){
 		DateTimeParse p = getParser(new DateTimeParse.Field[]{DateTimeParse.Field.DAY});
 		List<DateTimeParse.Field> fields = p.getFieldOrder();
 		assertEquals(3, fields.size());
-		Assert.assertEquals(DateTimeParse.Field.DAY, fields.get(0));
-		Assert.assertEquals(DateTimeParse.Field.YEAR, fields.get(1));
-		Assert.assertEquals(DateTimeParse.Field.MONTH, fields.get(2));
+		assertEquals(DateTimeParse.Field.DAY, fields.get(0));
+		assertEquals(DateTimeParse.Field.YEAR, fields.get(1));
+		assertEquals(DateTimeParse.Field.MONTH, fields.get(2));
 	}
 
 	public void testFieldOrderYear(){
 		DateTimeParse p = getParser(new DateTimeParse.Field[]{DateTimeParse.Field.YEAR});
 		List<DateTimeParse.Field> fields = p.getFieldOrder();
 		assertEquals(3, fields.size());
-		Assert.assertEquals(DateTimeParse.Field.YEAR, fields.get(0));
-		Assert.assertEquals(DateTimeParse.Field.MONTH, fields.get(1));
-		Assert.assertEquals(DateTimeParse.Field.DAY, fields.get(2));
+		assertEquals(DateTimeParse.Field.YEAR, fields.get(0));
+		assertEquals(DateTimeParse.Field.MONTH, fields.get(1));
+		assertEquals(DateTimeParse.Field.DAY, fields.get(2));
 	}
 
 	public void testFieldOrderMonthDay(){
 		DateTimeParse p = getParser(new DateTimeParse.Field[]{DateTimeParse.Field.MONTH, DateTimeParse.Field.DAY});
 		List<DateTimeParse.Field> fields = p.getFieldOrder();
 		assertEquals(3, fields.size());
-		Assert.assertEquals(DateTimeParse.Field.MONTH, fields.get(0));
-		Assert.assertEquals(DateTimeParse.Field.DAY, fields.get(1));
-		Assert.assertEquals(DateTimeParse.Field.YEAR, fields.get(2));
+		assertEquals(DateTimeParse.Field.MONTH, fields.get(0));
+		assertEquals(DateTimeParse.Field.DAY, fields.get(1));
+		assertEquals(DateTimeParse.Field.YEAR, fields.get(2));
 	}
 
 	public void testFieldOrderMonthYear(){
 		DateTimeParse p = getParser(new DateTimeParse.Field[]{DateTimeParse.Field.MONTH, DateTimeParse.Field.YEAR});
 		List<DateTimeParse.Field> fields = p.getFieldOrder();
 		assertEquals(3, fields.size());
-		Assert.assertEquals(DateTimeParse.Field.MONTH, fields.get(0));
-		Assert.assertEquals(DateTimeParse.Field.YEAR, fields.get(1));
-		Assert.assertEquals(DateTimeParse.Field.DAY, fields.get(2));
+		assertEquals(DateTimeParse.Field.MONTH, fields.get(0));
+		assertEquals(DateTimeParse.Field.YEAR, fields.get(1));
+		assertEquals(DateTimeParse.Field.DAY, fields.get(2));
 	}
 
 	public void testFieldOrderDayMonth(){
 		DateTimeParse p = getParser(new DateTimeParse.Field[]{DateTimeParse.Field.DAY, DateTimeParse.Field.MONTH});
 		List<DateTimeParse.Field> fields = p.getFieldOrder();
 		assertEquals(3, fields.size());
-		Assert.assertEquals(DateTimeParse.Field.DAY, fields.get(0));
-		Assert.assertEquals(DateTimeParse.Field.MONTH, fields.get(1));
-		Assert.assertEquals(DateTimeParse.Field.YEAR, fields.get(2));
+		assertEquals(DateTimeParse.Field.DAY, fields.get(0));
+		assertEquals(DateTimeParse.Field.MONTH, fields.get(1));
+		assertEquals(DateTimeParse.Field.YEAR, fields.get(2));
 	}
 
 	public void testFieldOrderDayYear(){
 		DateTimeParse p = getParser(new DateTimeParse.Field[]{DateTimeParse.Field.DAY, DateTimeParse.Field.YEAR});
 		List<DateTimeParse.Field> fields = p.getFieldOrder();
 		assertEquals(3, fields.size());
-		Assert.assertEquals(DateTimeParse.Field.DAY, fields.get(0));
-		Assert.assertEquals(DateTimeParse.Field.YEAR, fields.get(1));
-		Assert.assertEquals(DateTimeParse.Field.MONTH, fields.get(2));
+		assertEquals(DateTimeParse.Field.DAY, fields.get(0));
+		assertEquals(DateTimeParse.Field.YEAR, fields.get(1));
+		assertEquals(DateTimeParse.Field.MONTH, fields.get(2));
 	}
 
 	public void testFieldOrderYearMonth(){
 		DateTimeParse p = getParser(new DateTimeParse.Field[]{DateTimeParse.Field.YEAR, DateTimeParse.Field.MONTH});
 		List<DateTimeParse.Field> fields = p.getFieldOrder();
 		assertEquals(3, fields.size());
-		Assert.assertEquals(DateTimeParse.Field.YEAR, fields.get(0));
-		Assert.assertEquals(DateTimeParse.Field.MONTH, fields.get(1));
-		Assert.assertEquals(DateTimeParse.Field.DAY, fields.get(2));
+		assertEquals(DateTimeParse.Field.YEAR, fields.get(0));
+		assertEquals(DateTimeParse.Field.MONTH, fields.get(1));
+		assertEquals(DateTimeParse.Field.DAY, fields.get(2));
 	}
 
 	public void testFieldOrderYearDay(){
 		DateTimeParse p = getParser(new DateTimeParse.Field[]{DateTimeParse.Field.YEAR, DateTimeParse.Field.DAY});
 		List<DateTimeParse.Field> fields = p.getFieldOrder();
 		assertEquals(3, fields.size());
-		Assert.assertEquals(DateTimeParse.Field.YEAR, fields.get(0));
-		Assert.assertEquals(DateTimeParse.Field.DAY, fields.get(1));
-		Assert.assertEquals(DateTimeParse.Field.MONTH, fields.get(2));
+		assertEquals(DateTimeParse.Field.YEAR, fields.get(0));
+		assertEquals(DateTimeParse.Field.DAY, fields.get(1));
+		assertEquals(DateTimeParse.Field.MONTH, fields.get(2));
 	}
 
 	public void testFieldOrderDuplicate(){
 		DateTimeParse p = getParser(new DateTimeParse.Field[]{DateTimeParse.Field.YEAR, DateTimeParse.Field.YEAR});
 		List<DateTimeParse.Field> fields = p.getFieldOrder();
 		assertEquals(3, fields.size());
-		Assert.assertEquals(DateTimeParse.Field.YEAR, fields.get(0));
-		Assert.assertEquals(DateTimeParse.Field.MONTH, fields.get(1));
-		Assert.assertEquals(DateTimeParse.Field.DAY, fields.get(2));
-	}
-
-	public void testGermanAscii(){
-		assertJustDateEquals("2100-05-27", parse("27 Mai 2100"));
-	}
-
-	public void testGermanUmlaut(){
-		assertJustDateEquals("2054-03-25", parse("25 M\u00e4r 2054"));
-	}
-
-	public void testGermanFormat(){
-		assertJustDateEquals("1994-08-03", parse("3. Aug. 1994"));
-		assertJustDateEquals("1994-08-03", parse("3. 8 1994"));
-	}
-
-	public void testSpanish(){
-		assertJustDateEquals("1994-08-01", parse("primero Ago 1994"));
-	}
-
-	public void testGermanFormatPeriodAfterDay(){
-		assertJustDateEquals("1994-08-03", parse("8 3. 1994"));
+		assertEquals(DateTimeParse.Field.YEAR, fields.get(0));
+		assertEquals(DateTimeParse.Field.MONTH, fields.get(1));
+		assertEquals(DateTimeParse.Field.DAY, fields.get(2));
 	}
 
 	public void testTimeHoursMinutes(){
@@ -695,22 +674,10 @@ public class DateTimeParseTest extends TestCase {
 		assertJustDateTimeEquals("1997-07-16 18:20:00", parse("1997-07-16T19:20+01:00"));
 	}
 
-	public void testGermanOrder(){
-		assertJustDateEquals("2000-01-02", parseGerman("02.01.2000"));
-	}
-
 	/* Not supported yet
-
-	public void testSpanishWithSpace(){
-		assertJustDateEquals("1994-08-19", parse("decimo noveno Ago 1994"));
-	}
 
 	public void testTimeHoursTooBig(){
 		assertNull(parse("99:20:00"));
-	}
-
-	public void testBrazil(){
-		assertJustDateEquals("1927-05-01", parse("1o. de maio de 1927"));
 	}
 
 	public void testYearWords(){
@@ -853,14 +820,6 @@ public class DateTimeParseTest extends TestCase {
 	private static final DateTimeParse PARSER_YEAR_DAY_MONTH = getParser(
 		new DateTimeParse.Field[]{DateTimeParse.Field.YEAR, DateTimeParse.Field.DAY, DateTimeParse.Field.MONTH}
 	);
-
-	private static final DateTimeParse PARSER_GERMAN = getParser(
-		Locale.GERMANY
-	);
-
-	public static String parseGerman(String date){
-		return formatDate(PARSER_GERMAN.parse(date));
-	}
 
 	public static String parseYearDayMonth(String date){
 		return formatDate(PARSER_YEAR_DAY_MONTH.parse(date));
